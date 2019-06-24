@@ -1,0 +1,14 @@
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/bin/Debug/netcoreapp2.1/rooster-api.deps.json
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/bin/Debug/netcoreapp2.1/rooster-api.runtimeconfig.json
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/bin/Debug/netcoreapp2.1/rooster-api.runtimeconfig.dev.json
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/bin/Debug/netcoreapp2.1/rooster-api.dll
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/bin/Debug/netcoreapp2.1/rooster-api.pdb
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.csprojAssemblyReference.cache
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.csproj.CoreCompileInputs.cache
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.RazorAssemblyInfo.cache
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.RazorAssemblyInfo.cs
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.AssemblyInfoInputs.cache
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.AssemblyInfo.cs
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.RazorTargetAssemblyInfo.cache
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.dll
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.pdb
