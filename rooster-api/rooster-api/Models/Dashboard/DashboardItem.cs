@@ -1,14 +1,10 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace roosterapi.Models
+namespace roosterapi.Models.Dashboard
 {
-    public class DashboardItem
+    public class DashboardItem : DatabaseItemBase
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-
         [BsonElement("Name")]
         public string DashboardItemName { get; set; }
 

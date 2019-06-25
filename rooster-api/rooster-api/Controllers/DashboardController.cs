@@ -1,7 +1,7 @@
-﻿using roosterapi.Models;
-using roosterapi.Services;
+﻿using roosterapi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using roosterapi.Models.Dashboard;
 
 namespace roosterapi.Controllers
 {

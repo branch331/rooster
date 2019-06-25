@@ -1,16 +1,24 @@
 ﻿<Properties StartupConfiguration="{4BCA347D-C6E2-48BB-BAD8-2909F7E65654}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="rooster-api/Controllers/DashboardController.cs">
     <Files>
-      <File FileName="rooster-api/Controllers/ValuesController.cs" Line="7" Column="18" />
-      <File FileName="rooster-api/Models/DashboardItem.cs" Line="4" Column="18" />
-      <File FileName="rooster-api/Models/DashboardDatabaseSettings.cs" Line="2" Column="18" />
-      <File FileName="rooster-api/appsettings.json" Line="14" Column="1" />
-      <File FileName="rooster-api/Startup.cs" Line="13" Column="14" />
+      <File FileName="rooster-api/Models/Dashboard/DashboardItem.cs" Line="4" Column="11" />
+      <File FileName="rooster-api/Models/Dashboard/DashboardDatabaseSettings.cs" Line="5" Column="1" />
+      <File FileName="rooster-api/appsettings.json" Line="8" Column="36" />
+      <File FileName="rooster-api/Startup.cs" Line="49" Column="15" />
       <File FileName="rooster-api/Properties/launchSettings.json" Line="1" Column="1" />
       <File FileName="rooster-api/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="rooster-api/Services/DashboardService.cs" Line="1" Column="14" />
-      <File FileName="rooster-api/Program.cs" Line="1" Column="1" />
-      <File FileName="rooster-api/Controllers/DashboardController.cs" Line="1" Column="25" />
+      <File FileName="rooster-api/Program.cs" Line="17" Column="1" />
+      <File FileName="rooster-api/Controllers/DashboardController.cs" Line="1" Column="1" />
+      <File FileName="rooster-api/Models/Weather/WeatherItem.cs" Line="6" Column="48" />
+      <File FileName="rooster-api/Controllers/WeatherController.cs" Line="1" Column="1" />
+      <File FileName="rooster-api/Services/WeatherService.cs" Line="16" Column="10" />
+      <File FileName="rooster-api/Models/Weather/WeatherDatabaseSettings.cs" Line="5" Column="1" />
+      <File FileName="rooster-api/Models/IDatabaseSettings.cs" Line="10" Column="1" />
+      <File FileName="rooster-api/Services/DashboardService.cs" Line="13" Column="1" />
+      <File FileName="rooster-api/Services/DatabaseServiceBase.cs" Line="4" Column="25" />
+      <File FileName="rooster-api/Models/DatabaseItemBase.cs" Line="2" Column="45" />
+      <File FileName="rooster-api/Models/DatabaseSettingsBase.cs" Line="10" Column="1" />
+      <File FileName="rooster-api/Models/Weather.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +28,10 @@
               <Node name="Controllers" expanded="True">
                 <Node name="DashboardController.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Dashboard" expanded="True" />
+                <Node name="Weather" expanded="True" />
+              </Node>
               <Node name="Properties" expanded="True" />
               <Node name="Services" expanded="True" />
             </Node>

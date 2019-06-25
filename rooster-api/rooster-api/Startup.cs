@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using roosterapi.Models;
 using roosterapi.Services;
+using roosterapi.Models.Dashboard;
+using roosterapi.Models.Weather;
 
 namespace rooster_api
 {
@@ -37,10 +39,14 @@ namespace rooster_api
             });
 
             services.Configure<DashboardDatabaseSettings>(Configuration.GetSection(nameof(DashboardDatabaseSettings)));
-
-            services.AddSingleton<IDashboardDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DashboardDatabaseSettings>>().Value);
-
+            services.AddSingleton<IDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DashboardDatabaseSettings>>().Value);
             services.AddSingleton<DashboardService>();
+
+            /*
+            services.Configure<WeatherDatabaseSettings>(Configuration.GetSection(nameof(WeatherDatabaseSettings)));
+            services.AddSingleton<IDatabaseSettings>(sp => sp.GetRequiredService<IOptions<WeatherDatabaseSettings>>().Value);
+            services.AddSingleton<WeatherService>();
+            */
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
