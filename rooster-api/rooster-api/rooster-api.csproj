@@ -8,8 +8,6 @@
     <Folder Include="wwwroot\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
-    <Folder Include="Models\Dashboard\" />
-    <Folder Include="Models\Weather\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,5 +21,6 @@
     <Compile Remove="Models\Weather.cs" />
     <Compile Remove="Models\Weather\test.cs" />
     <Compile Remove="Controllers\RoosterControllerBase.cs" />
+    <Compile Remove="Models\IDatabaseSettings.cs" />
   </ItemGroup>
 </Project>

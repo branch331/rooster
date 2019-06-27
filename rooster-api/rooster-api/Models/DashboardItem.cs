@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace roosterapi.Models.Dashboard
+namespace roosterapi.Models
 {
     public class DashboardItem : DatabaseItemBase
     {

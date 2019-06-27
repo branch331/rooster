@@ -1,7 +1,7 @@
 ﻿using roosterapi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using roosterapi.Models.Dashboard;
+using roosterapi.Models;
 
 namespace roosterapi.Controllers
 {
@@ -17,8 +17,7 @@ namespace roosterapi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<DashboardItem>> Get() =>
-            _dashboardService.Get();
+        public ActionResult<List<DashboardItem>> Get() => _dashboardService.Get();
 
         [HttpGet("{id:length(24)}", Name = "GetDashboardItem")]
         public ActionResult<DashboardItem> Get(string id)

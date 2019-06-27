@@ -1,11 +1,12 @@
 ﻿using roosterapi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using roosterapi.Models.Weather;
+using roosterapi.Models;
 
 namespace roosterapi.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class WeatherController : ControllerBase
     {
         private readonly WeatherService _weatherService;
@@ -14,6 +15,9 @@ namespace roosterapi.Controllers
         {
             _weatherService = weatherService;
         }
+
+        [HttpGet]
+        public ActionResult<List<WeatherItem>> Get() => _weatherService.Get();
 
         [HttpGet("{id:length(24)}", Name = "GetWeatherItem")]
         public ActionResult<WeatherItem> Get(string id)
