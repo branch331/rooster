@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rooster-api", "rooster-api\rooster-api.csproj", "{4BCA347D-C6E2-48BB-BAD8-2909F7E65654}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rooster-tests", "rooster-tests\rooster-tests.csproj", "{00F0752A-A17E-4A9F-A6AE-4FC29D890962}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{4BCA347D-C6E2-48BB-BAD8-2909F7E65654}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BCA347D-C6E2-48BB-BAD8-2909F7E65654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BCA347D-C6E2-48BB-BAD8-2909F7E65654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00F0752A-A17E-4A9F-A6AE-4FC29D890962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F0752A-A17E-4A9F-A6AE-4FC29D890962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F0752A-A17E-4A9F-A6AE-4FC29D890962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F0752A-A17E-4A9F-A6AE-4FC29D890962}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
