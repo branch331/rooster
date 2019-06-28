@@ -36,9 +36,12 @@ namespace rooster_api
                 });
             });
 
-            services.Configure<DatabaseSettingsBase>(Configuration.GetSection(nameof(DatabaseSettingsBase)));
-            services.AddSingleton<IDatabaseSettingsBase>(sp => sp.GetRequiredService<IOptions<DatabaseSettingsBase>>().Value);
+            services.Configure<DashboardDatabaseSettings>(Configuration.GetSection(nameof(DashboardDatabaseSettings)));
+            services.AddSingleton<IDashboardDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DashboardDatabaseSettings>>().Value);
             services.AddSingleton<DashboardService>();
+
+            services.Configure<WeatherDatabaseSettings>(Configuration.GetSection(nameof(WeatherDatabaseSettings)));
+            services.AddSingleton<IWeatherDatabaseSettings>(sp => sp.GetRequiredService<IOptions<WeatherDatabaseSettings>>().Value);
             services.AddSingleton<WeatherService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

@@ -7,11 +7,11 @@ namespace roosterapi.Services
 {
     public class DashboardService : DatabaseServiceBase<DashboardItem>
     {
-        public DashboardService(IDatabaseSettingsBase settings)
+        public DashboardService(IDashboardDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-            _databaseItems = database.GetCollection<DashboardItem>("DashboardItems");
+            _databaseItems = database.GetCollection<DashboardItem>(settings.CollectionName);
         }       
     }
 }

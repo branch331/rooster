@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{4BCA347D-C6E2-48BB-BAD8-2909F7E65654}|Default">
-  <MonoDevelop.Ide.ItemProperties.rooster-tests FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="rooster-api/Models/DatabaseItemBase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="rooster-api/Models/WeatherItem.cs">
     <Files>
-      <File FileName="rooster-api/Startup.cs" Line="14" Column="27" />
+      <File FileName="rooster-api/Startup.cs" Line="45" Column="53" />
       <File FileName="rooster-api/Controllers/WeatherController.cs" Line="4" Column="24" />
-      <File FileName="rooster-api/Services/WeatherService.cs" Line="19" Column="1" />
+      <File FileName="rooster-api/Services/WeatherService.cs" Line="18" Column="1" />
       <File FileName="rooster-api/Services/DatabaseServiceBase.cs" Line="19" Column="33" />
-      <File FileName="rooster-api/appsettings.json" Line="3" Column="1" />
-      <File FileName="rooster-api/Services/DashboardService.cs" Line="8" Column="1" />
-      <File FileName="rooster-api/Models/DatabaseSettingsBase.cs" Line="8" Column="1" />
-      <File FileName="rooster-api/Models/DatabaseItemBase.cs" Line="13" Column="1" />
+      <File FileName="rooster-api/appsettings.json" Line="8" Column="36" />
+      <File FileName="rooster-api/Services/DashboardService.cs" Line="8" Column="40" />
+      <File FileName="rooster-api/Models/DatabaseItemBase.cs" Line="11" Column="6" />
       <File FileName="rooster-api/Controllers/DashboardController.cs" Line="19" Column="18" />
       <File FileName="rooster-api/Program.cs" Line="17" Column="1" />
-      <File FileName="rooster-api/Models/DashboardItem.cs" Line="4" Column="28" />
+      <File FileName="rooster-api/Models/DashboardItem.cs" Line="20" Column="1" />
       <File FileName="rooster-api/Models/WeatherItem.cs" Line="4" Column="28" />
-      <File FileName="rooster-tests/ServiceTests.cs" Line="30" Column="36" />
-      <File FileName="rooster-tests/MockService.cs" Line="19" Column="1" />
-      <File FileName="rooster-tests/MockItem.cs" Line="1" Column="1" />
+      <File FileName="rooster-tests/ServiceTests.cs" Line="34" Column="16" />
+      <File FileName="rooster-tests/MockService.cs" Line="18" Column="2" />
+      <File FileName="rooster-tests/MockItem.cs" Line="8" Column="7" />
+      <File FileName="rooster-api/Models/WeatherDatabaseSettings.cs" Line="17" Column="1" />
+      <File FileName="rooster-api/Models/DashboardDatabaseSettings.cs" Line="5" Column="51" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,7 +24,7 @@
           <Node name="rooster-api" expanded="True">
             <Node name="rooster-api" expanded="True">
               <Node name="Models" expanded="True">
-                <Node name="DatabaseItemBase.cs" selected="True" />
+                <Node name="WeatherItem.cs" selected="True" />
               </Node>
               <Node name="Services" expanded="True" />
             </Node>
