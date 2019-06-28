@@ -1,54 +1,47 @@
 using NUnit.Framework;
 using roosterapi.Models;
 using roosterapi.Services;
-using roostertests;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using MongoDB.Driver;
 using Moq;
 
 namespace ServiceTests
 {
     [TestFixture]
-    public class DashboardServiceTests
+    public class DatabaseServiceTests
     {
-        private MockService mockService;
+        private DatabaseServiceBase<DatabaseItemBase> mockServiceObj;
 
         [SetUp]
         public void Setup()
         {
-            IDatabaseSettingsBase mockDatabaseSettings = new DatabaseSettingsBase()
+            List<DatabaseItemBase> mockCollection = new List<DatabaseItemBase>();
+            mockCollection.Add(new DatabaseItemBase()
             {
-                ConnectionString = "mongodb://localhost:27017",
-                DatabaseName = "mockDb"
-            };
-
-            mockService = new MockService(mockDatabaseSettings);
-        }
-
-        [Test]
-        public void TestCreateAndGet()
-        {
-            mockService.Create(new MockItem()
-            {
-                MockItemName = "Mock Name",
-                MockItemDescription = "Mock Description"
+                Id = "asdfgasdfgasdfgasdfgasdf"
             });
 
-            Assert.IsTrue(mockService.Get().ToArray()[0].MockItemName == "Mock Name");
+            var mockService = new Mock<DatabaseServiceBase<DatabaseItemBase>>();
+            mockService.Setup(x => x.Get()).Returns(mockCollection);
+
+            mockServiceObj = mockService.Object;      
         }
 
         [Test]
-        public void TestUpdateAndRemove()
+        public void TestPass()
         {
-            var mockItem = mockService.Get().ToArray()[0];
-            mockItem.MockItemName = "Updated Name";
+            var x = 5;
+            Assert.IsTrue(x > 2);
+        }
 
-            mockService.Update(mockItem.Id, mockItem);
-
-            Assert.IsTrue(mockService.Get().ToArray()[0].MockItemName == "Updated Name");
-
-            mockService.Remove(mockItem.Id);
-
-            Assert.IsTrue(mockService.Get().ToArray().Length == 0);
+        [Test]
+        public void TestGet()
+        {
+            var databaseItemList = mockServiceObj.Get();
+            Assert.IsTrue(databaseItemList.GetType() == typeof(List));
+            Assert.IsTrue(databaseItemList.Count() == 1);        
         }
     }
 }

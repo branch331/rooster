@@ -1,35 +1,33 @@
 ﻿<Properties StartupConfiguration="{4BCA347D-C6E2-48BB-BAD8-2909F7E65654}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="rooster-api/Models/WeatherItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="rooster-tests/ServiceTests.cs">
     <Files>
-      <File FileName="rooster-api/Startup.cs" Line="45" Column="53" />
+      <File FileName="rooster-api/Startup.cs" Line="44" Column="11" />
       <File FileName="rooster-api/Controllers/WeatherController.cs" Line="4" Column="24" />
-      <File FileName="rooster-api/Services/WeatherService.cs" Line="18" Column="1" />
+      <File FileName="rooster-api/Services/WeatherService.cs" Line="19" Column="1" />
       <File FileName="rooster-api/Services/DatabaseServiceBase.cs" Line="19" Column="33" />
       <File FileName="rooster-api/appsettings.json" Line="8" Column="36" />
-      <File FileName="rooster-api/Services/DashboardService.cs" Line="8" Column="40" />
+      <File FileName="rooster-api/Services/DashboardService.cs" Line="10" Column="34" />
       <File FileName="rooster-api/Models/DatabaseItemBase.cs" Line="11" Column="6" />
       <File FileName="rooster-api/Controllers/DashboardController.cs" Line="19" Column="18" />
       <File FileName="rooster-api/Program.cs" Line="17" Column="1" />
       <File FileName="rooster-api/Models/DashboardItem.cs" Line="20" Column="1" />
       <File FileName="rooster-api/Models/WeatherItem.cs" Line="4" Column="28" />
-      <File FileName="rooster-tests/ServiceTests.cs" Line="34" Column="16" />
-      <File FileName="rooster-tests/MockService.cs" Line="18" Column="2" />
-      <File FileName="rooster-tests/MockItem.cs" Line="8" Column="7" />
+      <File FileName="rooster-tests/ServiceTests.cs" Line="36" Column="1" />
       <File FileName="rooster-api/Models/WeatherDatabaseSettings.cs" Line="17" Column="1" />
       <File FileName="rooster-api/Models/DashboardDatabaseSettings.cs" Line="5" Column="51" />
+      <File FileName="rooster-api/appsettings.Development.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="rooster-api" expanded="True">
             <Node name="rooster-api" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="WeatherItem.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
             </Node>
             <Node name="rooster-tests" expanded="True">
               <Node name="Dependencies" expanded="True" />
+              <Node name="ServiceTests.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -42,7 +40,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-tests/MockService.cs" relfile="rooster-tests/MockService.cs" line="11" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.rooster-api PreferredExecutionTarget="MonoDevelop.Default" />
