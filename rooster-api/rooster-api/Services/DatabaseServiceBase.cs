@@ -5,7 +5,7 @@ using roosterapi.Models;
 
 namespace roosterapi.Services
 {
-    public class DatabaseServiceBase<T> where T : DatabaseItemBase
+    public class DatabaseServiceBase<T> : IDatabaseServiceBase<T> where T : IDatabaseItemBase
     {
         public IMongoCollection<T> _databaseItems;
 
@@ -24,5 +24,15 @@ namespace roosterapi.Services
         public void Remove(T databaseItemIn) => _databaseItems.DeleteOne(databaseItem => databaseItem.Id == databaseItemIn.Id);
 
         public void Remove(string id) => _databaseItems.DeleteOne(databaseItem => databaseItem.Id == id);
+    }
+
+    public interface IDatabaseServiceBase<T>
+    {
+        List<T> Get();
+        T Get(string id);
+        T Create(T databaseItem);
+        void Update(string id, T databaseItemIn);
+        void Remove(T databaseItemIn);
+        void Remove(string id);
     }
 }
