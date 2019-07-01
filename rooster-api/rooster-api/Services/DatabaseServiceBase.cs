@@ -7,7 +7,7 @@ namespace roosterapi.Services
 {
     public class DatabaseServiceBase<T> : IDatabaseServiceBase<T> where T : IDatabaseItemBase
     {
-        public IMongoCollection<T> _databaseItems;
+        public IMongoCollection<T> _databaseItems { get; set; }
 
         public List<T> Get() => _databaseItems.Find(databaseItems => true).ToList();
 

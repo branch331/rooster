@@ -12,31 +12,24 @@ namespace ServiceTests
     [TestFixture]
     public class DatabaseServiceTests
     {
-        private IDatabaseServiceBase<IDatabaseItemBase> mockServiceObj;
+        private Mock<IDatabaseServiceBase<DatabaseItemBase>> mockService;
         private string testId = "asdfgasdfgasdfgasdfgasdf";
 
         [SetUp]
         public void Setup()
         {
-            List<IDatabaseItemBase> mockCollection = new List<IDatabaseItemBase>();
+            var mockCollection = new List<DatabaseItemBase>();
+
             mockCollection.Add(new DatabaseItemBase()
             {
                 Id = testId
             });
 
-            var mockService = new Mock<IDatabaseServiceBase<IDatabaseItemBase>>();
+            mockService = new Mock<IDatabaseServiceBase<DatabaseItemBase>>();
 
             mockService.Setup(x => x.Get()).Returns(mockCollection);
             mockService.Setup(x => x.Get(It.IsAny<string>())).Returns(mockCollection.Find(item => item.Id == testId));
-            mockService.Setup(x => x.Create(It.IsAny<IDatabaseItemBase>())).Returns<IDatabaseItemBase>(x => x);
-
-            /*
-            mockService.Setup(x => x.Update(It.IsAny<string>(), It.IsAny<IDatabaseItemBase>())).Returns(true);
-            mockService.Setup(x => x.Remove(It.IsAny<IDatabaseItemBase>())).Returns(true);
-            mockService.Setup(x => x.Remove(It.IsAny<string>())).Returns(true);
-            */          
-
-            mockServiceObj = mockService.Object;
+            mockService.Setup(x => x.Create(It.IsAny<DatabaseItemBase>())).Returns<DatabaseItemBase>(x => x);       
         }
 
         [Test]
@@ -49,14 +42,14 @@ namespace ServiceTests
         [Test]
         public void TestGet()
         {
-            var databaseItemList = mockServiceObj.Get();
+            var databaseItemList = mockService.Object.Get();
             Assert.IsTrue(databaseItemList.Count() == 1);    
         }
 
         [Test]
         public void TestGetById()
         {
-            var databaseItem = mockServiceObj.Get(testId);
+            var databaseItem = mockService.Object.Get(testId);
             Assert.IsTrue(databaseItem.Id == testId);
         }
 
@@ -67,7 +60,7 @@ namespace ServiceTests
             var newDatabaseItem = new DatabaseItemBase();
             newDatabaseItem.Id = newId;
 
-            Assert.IsTrue(mockServiceObj.Create(newDatabaseItem).Id == newId);
+            Assert.IsTrue(mockService.Object.Create(newDatabaseItem).Id == newId);
         }
     }
 }
