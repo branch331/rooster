@@ -37,7 +37,7 @@ namespace roosterapi.Controllers
         {
             _weatherService.Create(weatherItem);
 
-            return CreatedAtRoute("GetWeatherItem", new { id = weatherItem.Id.ToString(), weatherItem });
+            return CreatedAtRoute("GetWeatherItem", new { id = weatherItem.Id.ToString() }, weatherItem);
         }
 
         [HttpPut("{id:length(24)}")]

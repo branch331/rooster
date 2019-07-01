@@ -1,6 +1,4 @@
 ﻿using MongoDB.Driver;
-using System.Collections.Generic;
-using System.Linq;
 using roosterapi.Models;
 
 namespace roosterapi.Services

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { WeatherItem } from '../weatherItem';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-weather',
@@ -9,10 +8,10 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
+  @Input() weatherItemId: string;
   weatherItem: WeatherItem;
 
-  //Hard-coded URL for testing only
-  private roosterapiUrl = 'http://localhost:5000/api/weather/5d12089119929e6f30b737b2';
+  private roosterapiBaseUrl = 'http://localhost:5000/api/weather/';
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -25,7 +24,7 @@ export class WeatherComponent implements OnInit {
   }
 
   getWeatherItem(): void {
-    this.http.get<WeatherItem>(this.roosterapiUrl)
+    this.http.get<WeatherItem>(this.roosterapiBaseUrl + this.weatherItemId)
         .subscribe(weatherItem => this.weatherItem = weatherItem);
   }
 }
