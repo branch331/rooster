@@ -1,6 +1,16 @@
-<p *ngIf="weatherItem">
+<div *ngIf="weatherItem && weatherData">
   weather works!
   {{ weatherItem.weatherItemName }}
-  {{ weatherItem.weatherItemCoordinates }}
-</p>
+  {{ weatherCoordinates}}
+
+  <div>
+      <h2>Darksky Data</h2>
+
+      {{ weatherData.timezone }}
+  </div>
+</div>
+
+
+
+
 

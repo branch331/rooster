@@ -8,8 +8,11 @@ namespace roosterapi.Models
         [BsonElement("Name")]
         public string WeatherItemName { get; set; }
 
-        [BsonElement("Coordinates")]
-        public string WeatherItemCoordinates { get; set; }
+        [BsonElement("Latitude")]
+        public float WeatherItemLatitude { get; set; }
+
+        [BsonElement("Longitude")]
+        public float WeatherItemLongitude { get; set; }
     }
 }
 
