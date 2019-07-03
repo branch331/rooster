@@ -6,7 +6,16 @@
   <div>
       <h2>Darksky Data</h2>
 
-      {{ weatherData.timezone }}
+      {{ weatherData.hourly.summary }}
+      <ul *ngFor="let hourlyForecast of weatherData.hourly.data">
+        {{ hourlyForecast.time * 1000 | date:'HH:mm'}} |
+        {{ hourlyForecast.temperature }} |
+        {{ hourlyForecast.precipType }} | <!--May be empty if no precip-->
+        {{ hourlyForecast.icon }} | <!--Can be clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night-->
+        {{ hourlyForecast.precipProbability }}% |
+        {{ hourlyForecast.summary }} |
+      </ul>
+
   </div>
 </div>
 
