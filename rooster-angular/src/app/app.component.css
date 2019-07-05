@@ -1,0 +1,18 @@
+#roosterJumbo {
+    height: 6.5rem;
+    margin: 0;
+    padding: 1rem 1.5rem;
+}
+
+#mainHeader {
+    font-family: 'Glegoo', serif;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+#roosterHeader {
+    font-family: 'Bad Script', cursive;
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+    margin-left: 0.3rem;
+}

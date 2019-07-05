@@ -1,7 +1,7 @@
-<ul *ngFor="let dashboardItem of dashboardItems">
-  <li *ngIf="dashboardItem.dashboardItemType == 'Weather'">
+<div id="dashboard" class="container" *ngFor="let dashboardItem of dashboardItems">
+  <div class="dashboardItem col-6" *ngIf="dashboardItem.dashboardItemType == 'Weather'">
     {{ dashboardItem.dashboardItemName }}
     <app-weather [weatherItemId]="dashboardItem.dashboardItemReferenceId"></app-weather>
-  </li>
-</ul>
+  </div>
+</div>
 

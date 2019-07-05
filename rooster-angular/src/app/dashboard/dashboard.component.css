@@ -1,0 +1,9 @@
+#dashboard {
+    margin: 1rem 0.5rem;
+}
+
+.dashboardItem {
+    background: rgb(155, 155, 186);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
