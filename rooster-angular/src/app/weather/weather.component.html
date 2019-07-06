@@ -1,12 +1,8 @@
 <div *ngIf="weatherItem && weatherData">
-  weather works!
-  {{ weatherItem.weatherItemName }}
-  {{ weatherCoordinates}}
-
   <div>
-      <h2>Darksky Data</h2>
-
-      {{ weatherData.hourly.summary }}
+      <p id="weatherSummary">{{ weatherData.hourly.summary }}</p>
+      <p id="weatherSummary">{{ weatherData.currently.icon }}</p>
+      <p id="weatherSummary">{{ weatherData.currently.summary }}</p>
       <ul *ngFor="let hourlyForecast of weatherData.hourly.data">
         {{ hourlyForecast.time * 1000 | date:'HH:mm'}} |
         {{ hourlyForecast.temperature }} |
@@ -15,7 +11,6 @@
         {{ hourlyForecast.precipProbability }}% |
         {{ hourlyForecast.summary }} |
       </ul>
-
   </div>
 </div>
 
