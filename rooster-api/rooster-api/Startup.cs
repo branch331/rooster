@@ -44,6 +44,10 @@ namespace rooster_api
             services.AddSingleton<IWeatherDatabaseSettings>(sp => sp.GetRequiredService<IOptions<WeatherDatabaseSettings>>().Value);
             services.AddSingleton<WeatherService>();
 
+            services.Configure<CommuteDatabaseSettings>(Configuration.GetSection(nameof(CommuteDatabaseSettings)));
+            services.AddSingleton<ICommuteDatabaseSettings>(sp => sp.GetRequiredService<IOptions<CommuteDatabaseSettings>>().Value);
+            services.AddSingleton<CommuteService>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
