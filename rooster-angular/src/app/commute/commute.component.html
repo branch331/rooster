@@ -1,0 +1,9 @@
+<div *ngIf = "commuteItem && commuteData">
+  <p>{{ commuteItem.commuteItemName }}</p>
+  <p>{{ commuteItem.commuteOriginName }} -> {{ commuteItem.commuteDestinationName }}</p>
+  <p>{{ commuteOriginCoordinates }} -> {{ commuteDestinationCoordinates}}</p>
+  
+  <p>Distance: {{ commuteData.resourceSets[0].resources[0].results[0].travelDistance }} km</p>
+  <p>Duration: {{ commuteData.resourceSets[0].resources[0].results[0].travelDuration }} minutes</p>
+</div>
+

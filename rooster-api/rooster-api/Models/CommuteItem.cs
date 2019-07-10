@@ -8,16 +8,23 @@ namespace roosterapi.Models
         [BsonElement("Name")]
         public string CommuteItemName { get; set; }
 
+        [BsonElement("OriginName")]
+        public string CommuteOriginName { get; set; }
+
         [BsonElement("OriginLatitude")]
         public float CommuteOriginLatitude { get; set; }
 
         [BsonElement("OriginLongitude")]
         public float CommuteOriginLongitude { get; set; }
 
-        [BsonElement("DestionationLatitude")]
+        [BsonElement("DesinationName")]
+        public string CommuteDestinationName { get; set; }
+
+        [BsonElement("DestinationLatitude")]
         public float CommuteDestinationLatitude { get; set; }
 
         [BsonElement("DestinationLongitude")]
-        public float CommuteDestiniationLongitude { get; set; }
+        public float CommuteDestinationLongitude { get; set; }
     }
 }
+    

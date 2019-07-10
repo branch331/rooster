@@ -19,7 +19,7 @@ namespace roosterapi.Controllers
         [HttpGet]
         public ActionResult<List<CommuteItem>> Get() => _commuteService.Get();
 
-        [HttpGet("{id:length(24)}", Name = "GetDashboardItem")]
+        [HttpGet("{id:length(24)}", Name = "GetCommuteItem")]
         public ActionResult<CommuteItem> Get(string id)
         {
             var commuteItem = _commuteService.Get(id);
@@ -37,7 +37,7 @@ namespace roosterapi.Controllers
         {
             _commuteService.Create(commuteItem);
 
-            return CreatedAtRoute("GetDashboardItem", new { id = commuteItem.Id.ToString() }, commuteItem);
+            return CreatedAtRoute("GetCommuteItem", new { id = commuteItem.Id.ToString() }, commuteItem);
         }
 
         [HttpPut("{id:length(24)}")]
