@@ -1,16 +1,26 @@
 <div *ngIf="weatherItem && weatherData">
-  <div>
-      <p id="weatherSummary">{{ weatherData.hourly.summary }}</p>
-      <p id="weatherSummary">{{ weatherData.currently.icon }}</p>
-      <p id="weatherSummary">{{ weatherData.currently.summary }}</p>
-      <ul *ngFor="let hourlyForecast of weatherData.hourly.data">
-        {{ hourlyForecast.time * 1000 | date:'HH:mm'}} |
-        {{ hourlyForecast.temperature }} |
-        {{ hourlyForecast.precipType }} | <!--May be empty if no precip-->
-        {{ hourlyForecast.icon }} | <!--Can be clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night-->
-        {{ hourlyForecast.precipProbability }}% |
-        {{ hourlyForecast.summary }} |
-      </ul>
+  <p id="weatherSummary">{{ weatherData.hourly.summary }}</p>
+  <p class="weatherHeaderText">{{ weatherData.currently.icon }}</p>
+  <p class="weatherHeaderText">{{ weatherData.currently.summary }}</p>
+  
+  <div class="row" id="weatherBody">
+    <ng-container *ngFor="let hourlyForecast of weatherData.hourly.data.slice(0, 12); index as i">
+      <div class="col-2" *ngIf="i % 2 == 0">
+        <!--Img can be clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night-->
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1542304813-922a8025d72a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" alt="hourlyForecast.icon"/>
+        
+        <div class="card-body">
+          <p class="weatherBodyText"> {{ hourlyForecast.summary }} </p>
+          <p class="weatherBodyText"> {{ hourlyForecast.time * 1000 | date:'HH:mm'}} </p>
+          <p class="weatherBodyText"> {{ hourlyForecast.temperature }} </p>
+
+          <div *ngIf="hourlyForecast.precipType"> 
+            <p class="weatherBodyText"> {{ hourlyForecast.precipType }} </p>
+            <p class="weatherBodyText"> {{ hourlyForecast.precipProbability }}% </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>
 

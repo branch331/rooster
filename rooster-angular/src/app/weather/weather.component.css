@@ -1,4 +1,18 @@
 #weatherSummary {
     font-size: 1rem;
+    margin: 0;
     text-align: center;
+}
+
+#weatherBody {
+    margin-top: 10px;
+}
+
+.weatherHeaderText {
+    margin: 0;
+    text-align: center;
+}
+
+.weatherBodyText {
+    margin: 0;
 }
