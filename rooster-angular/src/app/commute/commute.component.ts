@@ -42,20 +42,25 @@ export class CommuteComponent implements OnInit {
 
   getCommuteData(): void {
     this.http.get<Object>(this.bingDistanceApiBaseUrl 
-                                    + "origins=" 
-                                    + this.commuteOriginCoordinates
-                                    + "&destinations="
-                                    + this.commuteDestinationCoordinates
-                                    + "&travelMode=driving&key="
-                                    + this.key)
+                          + "origins=" 
+                          + this.commuteOriginCoordinates
+                          + "&destinations="
+                          + this.commuteDestinationCoordinates
+                          + "&travelMode=driving&key="
+                          + this.key)
       .subscribe(commuteData => {
         this.commuteData = commuteData;
       });
   }
 
   getCommuteImage(): void {
-    this.http.get('https://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes?wp.0=30.428838,-97.659316;46;A&wp.1=30.407825,-97.726570;46;B&key=Ar7d_Frhf9pNH2QUoWIK95AmRObxnE0DyD2Qxxufv6be0sCu2tzX_V_mksU2A4lY',
-                        { responseType: 'blob' })
+    this.http.get("https://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes?wp.0="
+                  + this.commuteOriginCoordinates
+                  + ";46;A&wp.1="
+                  + this.commuteDestinationCoordinates
+                  + ";46;B&key="
+                  + this.key,
+                  { responseType: 'blob' })
       .subscribe(commuteImage => {
         this.commuteImage = commuteImage;
         this.generateImageUrl(this.commuteImage);
