@@ -9,6 +9,7 @@ import { CommuteComponent } from './commute/commute.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateComponent } from './create/create.component';
 import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.co
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

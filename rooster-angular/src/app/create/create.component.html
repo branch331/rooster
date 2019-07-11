@@ -1,3 +1,129 @@
 <p>
   create works!
 </p>
+
+<form>
+  <div class="form-group">
+    <label for="dashboardItemName">Name</label>
+    <input type="text" 
+    class="form-control" 
+    id="dashboardItemName" 
+    placeholder="Dashboard Item Name"
+    required
+    [(ngModel)]="model.dashboardItemName"
+    name="dashboardItemName">
+
+    <p>REMOVE THIS: {{ model.dashboardItemName }}</p>
+
+    <label for="dashboardItemType">Type</label>
+
+    <select type="text" 
+    class="form-control" 
+    id="dashboardItemType" 
+    required
+    [(ngModel)]="model.dashboardItemType"
+    name="dashboardItemType">
+      <option *ngFor="let type of dashboardItemTypes" 
+      [value]="type">
+       {{ type }} 
+      </option>
+    </select>
+
+    <div [ngSwitch]="model.dashboardItemType">
+      <div *ngSwitchCase="'Weather'">
+        <p>Weather</p>
+        
+        <label for="weatherItemName">Weather Item Name</label>
+        <input type="text"
+        class="form-control" 
+        id="weatherItemName" 
+        placeholder="Weather Item Name"
+        required
+        name="weatherItemName">
+
+        <label for="weatherItemLatitude">Latitude</label>
+        <input type="text"
+        class="form-control" 
+        id="weatherItemLatitude" 
+        placeholder="Latitude"
+        required
+        name="weatherItemLatitude">
+
+        <label for="weatherItemLongitude">Longitude</label>
+        <input type="text"
+        class="form-control" 
+        id="weatherItemLongitude" 
+        placeholder="Longitude"
+        required
+        name="weatherItemLongitude">
+
+      </div>
+      <div *ngSwitchCase="'Commute'">
+        <p>Commute</p>
+
+        <label for="commuteItemName">Commute Item Name</label>
+        <input type="text"
+        class="form-control" 
+        id="commuteItemName" 
+        placeholder="Commute Item Name"
+        required
+        name="commuteItemName">
+
+        <label for="commuteOriginName">Origin Name</label>
+        <input type="text"
+        class="form-control" 
+        id="commuteOriginName" 
+        placeholder="Origin Name"
+        required
+        name="commuteOriginName">
+
+        <label for="commuteOriginLatitude">Latitude</label>
+        <input type="text"
+        class="form-control" 
+        id="commuteOriginLatitude" 
+        placeholder="Latitude"
+        required
+        name="commuteOriginLatitude">
+
+        <label for="commuteOriginLongitude">Longitude</label>
+        <input type="text"
+        class="form-control" 
+        id="commuteOriginLongitude" 
+        placeholder="Longitude"
+        required
+        name="commuteOriginLongitude">
+
+        <label for="commuteDestinationName">Destination Name</label>
+        <input type="text"
+        class="form-control" 
+        id="commuteDestinationName" 
+        placeholder="Destination Name"
+        required
+        name="commuteDestinationName">
+
+        <label for="commuteDestinationLatitude">Latitude</label>
+        <input type="text"
+        class="form-control" 
+        id="commuteDestinationLatitude" 
+        placeholder="Latitude"
+        required
+        name="commuteDestinationLatitude">
+
+        <label for="commuteDestinationLongitude">Longitude</label>
+        <input type="text"
+        class="form-control" 
+        id="commuteDestinationLongitude" 
+        placeholder="Longitude"
+        required
+        name="commuteDestinationLongitude">
+      </div>
+      <div *ngSwitchDefault>
+        <!--Empty default case-->
+      </div>
+    </div>
+
+    <p> REMOVE THIS: {{ model.dashboardItemType }} </p>
+    <button type="submit" class="btn btn-success" (click)=onSubmit()>Submit</button>
+  </div>
+
+</form>
