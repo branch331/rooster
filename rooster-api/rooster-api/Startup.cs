@@ -32,7 +32,9 @@ namespace rooster_api
             {
                 options.AddPolicy(AllowedOrigins, builder =>
                 {
-                    builder.WithOrigins("*");
+                    builder.WithOrigins("*")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
                 });
             });
 
