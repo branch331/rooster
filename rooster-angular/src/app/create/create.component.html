@@ -2,7 +2,7 @@
   create works!
 </p>
 
-<form>
+<form (ngSubmit)="onSubmit()" #dashboardForm="ngForm">
   <div class="form-group">
     <label for="dashboardItemName">Name</label>
     <input type="text" 
@@ -123,7 +123,7 @@
     </div>
 
     <p> REMOVE THIS: {{ model.dashboardItemType }} </p>
-    <button type="submit" class="btn btn-success" (click)=onSubmit()>Submit</button>
+    <button type="submit" class="btn btn-success">Submit!</button>
   </div>
 
 </form>
