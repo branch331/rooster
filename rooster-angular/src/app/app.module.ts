@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WeatherComponent } from './weather/weather.component';
 import { CommuteComponent } from './commute/commute.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CreateComponent } from './create/create.component';
+import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     WeatherComponent,
-    CommuteComponent
+    CommuteComponent,
+    CreateComponent,
+    DashboardDetailComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

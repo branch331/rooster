@@ -1,5 +1,8 @@
+<nav>
+    <a routerLink="new"><button class="btn btn-primary">Create!</button></a>
+</nav>
+
 <div id="dashboard" class="row justify-content-center">
-  
   <div class="dashboardItem col-11" *ngFor="let dashboardItem of dashboardItems">
     <div class="dashboardItemContents" *ngIf="dashboardItem.dashboardItemType == 'Weather'">
         <h4 id="dashboardItemHeader">{{ dashboardItem.dashboardItemName }}</h4>
@@ -10,5 +13,9 @@
         <h4 id="dashboardItemHeader">{{ dashboardItem.dashboardItemName }}</h4>
         <app-commute [commuteItemId]="dashboardItem.dashboardItemReferenceId"></app-commute>
     </div>
+
+    <nav>
+      <a routerLink="{{ dashboardItem.id }}"><button>Details</button></a>
+    </nav>
   </div>
 </div>
