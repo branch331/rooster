@@ -10,10 +10,10 @@
     id="dashboardItemName" 
     placeholder="Dashboard Item Name"
     required
-    [(ngModel)]="model.dashboardItemName"
+    [(ngModel)]="dashboardItem.dashboardItemName"
     name="dashboardItemName">
 
-    <p>REMOVE THIS: {{ model.dashboardItemName }}</p>
+    <p>REMOVE THIS: {{ dashboardItem.dashboardItemName }}</p>
 
     <label for="dashboardItemType">Type</label>
 
@@ -21,7 +21,7 @@
     class="form-control" 
     id="dashboardItemType" 
     required
-    [(ngModel)]="model.dashboardItemType"
+    [(ngModel)]="dashboardItem.dashboardItemType"
     name="dashboardItemType">
       <option *ngFor="let type of dashboardItemTypes" 
       [value]="type">
@@ -29,16 +29,16 @@
       </option>
     </select>
 
-    <div [ngSwitch]="model.dashboardItemType">
+    <div [ngSwitch]="dashboardItem.dashboardItemType">
       <div *ngSwitchCase="'Weather'">
-        <p>Weather</p>
-        
+
         <label for="weatherItemName">Weather Item Name</label>
         <input type="text"
         class="form-control" 
         id="weatherItemName" 
         placeholder="Weather Item Name"
         required
+        [(ngModel)]="weatherItem.weatherItemName"
         name="weatherItemName">
 
         <label for="weatherItemLatitude">Latitude</label>
@@ -47,6 +47,7 @@
         id="weatherItemLatitude" 
         placeholder="Latitude"
         required
+        [(ngModel)]="weatherItem.weatherItemLatitude"
         name="weatherItemLatitude">
 
         <label for="weatherItemLongitude">Longitude</label>
@@ -55,11 +56,11 @@
         id="weatherItemLongitude" 
         placeholder="Longitude"
         required
+        [(ngModel)]="weatherItem.weatherItemLongitude"
         name="weatherItemLongitude">
 
       </div>
       <div *ngSwitchCase="'Commute'">
-        <p>Commute</p>
 
         <label for="commuteItemName">Commute Item Name</label>
         <input type="text"
@@ -67,6 +68,7 @@
         id="commuteItemName" 
         placeholder="Commute Item Name"
         required
+        [(ngModel)]="commuteItem.commuteItemName"
         name="commuteItemName">
 
         <label for="commuteOriginName">Origin Name</label>
@@ -75,6 +77,7 @@
         id="commuteOriginName" 
         placeholder="Origin Name"
         required
+        [(ngModel)]="commuteItem.commuteOriginName"
         name="commuteOriginName">
 
         <label for="commuteOriginLatitude">Latitude</label>
@@ -83,6 +86,7 @@
         id="commuteOriginLatitude" 
         placeholder="Latitude"
         required
+        [(ngModel)]="commuteItem.commuteOriginLatitude"
         name="commuteOriginLatitude">
 
         <label for="commuteOriginLongitude">Longitude</label>
@@ -91,6 +95,7 @@
         id="commuteOriginLongitude" 
         placeholder="Longitude"
         required
+        [(ngModel)]="commuteItem.commuteOriginLongitude"
         name="commuteOriginLongitude">
 
         <label for="commuteDestinationName">Destination Name</label>
@@ -99,6 +104,7 @@
         id="commuteDestinationName" 
         placeholder="Destination Name"
         required
+        [(ngModel)]="commuteItem.commuteDestinationName"
         name="commuteDestinationName">
 
         <label for="commuteDestinationLatitude">Latitude</label>
@@ -107,6 +113,7 @@
         id="commuteDestinationLatitude" 
         placeholder="Latitude"
         required
+        [(ngModel)]="commuteItem.commuteDestinationLatitude"
         name="commuteDestinationLatitude">
 
         <label for="commuteDestinationLongitude">Longitude</label>
@@ -115,6 +122,7 @@
         id="commuteDestinationLongitude" 
         placeholder="Longitude"
         required
+        [(ngModel)]="commuteItem.commuteDestinationLongitude"
         name="commuteDestinationLongitude">
       </div>
       <div *ngSwitchDefault>
@@ -122,7 +130,7 @@
       </div>
     </div>
 
-    <p> REMOVE THIS: {{ model.dashboardItemType }} </p>
+    <p> REMOVE THIS: {{ dashboardItem.dashboardItemType }} </p>
     <button type="submit" class="btn btn-success">Submit!</button>
   </div>
 
