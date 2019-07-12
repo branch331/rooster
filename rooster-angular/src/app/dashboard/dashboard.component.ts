@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DashboardItem } from '../dashboardItem';
 import { Observable, of } from 'rxjs';
+import { DashboardService } from '../dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,14 +18,14 @@ export class DashboardComponent implements OnInit {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   };
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private dashboardService: DashboardService) { }
 
   ngOnInit() {
     this.getDashboardItems();
   }
 
   getDashboardItems(): void {
-    this.http.get<DashboardItem[]>(this.roosterapiUrl)
-        .subscribe(dashboardItems => this.dashboardItems = dashboardItems);
+    this.dashboardService.getDashboardItems()
+      .subscribe(dashboardItems => this.dashboardItems = dashboardItems);
   }
 }

@@ -4,6 +4,9 @@ import { DashboardItem } from '../dashboardItem';
 import { WeatherItem } from '../weatherItem';
 import { CommuteItem } from '../commuteItem';
 import { throwError } from 'rxjs';
+import { DashboardService } from '../dashboard.service'
+import { WeatherService } from '../weather.service'
+import { CommuteService } from '../commute.service'
 
 @Component({
   selector: 'app-create',
@@ -23,60 +26,31 @@ export class CreateComponent {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private dashboardService: DashboardService,
+              private weatherService: WeatherService,
+              private commuteSerivce: CommuteService) { }
 
   onSubmit() {
-    console.log("submitted \n" 
-    + this.dashboardItem.dashboardItemName + "\n"
-    + this.dashboardItem.dashboardItemType);
 
     if (this.dashboardItem.dashboardItemType == "Weather") {
-      console.log("Weather item created: \n"
-      + this.weatherItem.weatherItemName + "\n"
-      + this.weatherItem.weatherItemLatitude + "\n"
-      + this.weatherItem.weatherItemLongitude);
-
-      this.http.post(this.roosterapiBaseUrl + "weather", this.weatherItem, this.httpOptions)
-        .subscribe(responseObject => {
-          let weatherItem = responseObject as WeatherItem;
-          this.dashboardItem.dashboardItemReferenceId = weatherItem.id;
+      this.weatherService.addWeatherItem(this.weatherItem)
+        .subscribe(createdWeatherItem => {
+          this.dashboardItem.dashboardItemReferenceId = createdWeatherItem.id;
           this.createDashboardItem();
         });
     }
     else if (this.dashboardItem.dashboardItemType == "Commute") {
-      console.log("Commute item created: \n"
-      + this.commuteItem.commuteItemName + "\n"
-      + this.commuteItem.commuteOriginName + "\n"
-      + this.commuteItem.commuteOriginLatitude + "\n"
-      + this.commuteItem.commuteOriginLongitude + "\n"
-      + this.commuteItem.commuteDestinationName + "\n"
-      + this.commuteItem.commuteDestinationLatitude + "\n"
-      + this.commuteItem.commuteDestinationLongitude);
-
-      this.http.post(this.roosterapiBaseUrl + "commute", this.commuteItem, this.httpOptions)
-      .subscribe(responseObject => {
-        let commuteItem = responseObject as CommuteItem;
-        this.dashboardItem.dashboardItemReferenceId = commuteItem.id;
-        this.createDashboardItem();
-      });
+      this.commuteSerivce.addCommuteItem(this.commuteItem)
+        .subscribe(responseObject => {
+          let commuteItem = responseObject as CommuteItem;
+          this.dashboardItem.dashboardItemReferenceId = commuteItem.id;
+          this.createDashboardItem();
+        });
     }
   }
 
   createDashboardItem(): void {
-    this.http.post(this.roosterapiBaseUrl + 'dashboard', JSON.stringify(this.dashboardItem), this.httpOptions)
+    this.dashboardService.addDashboardItem(this.dashboardItem)
       .subscribe(response => alert("complete"));
   }
-  /*
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      console.error('Error occurred: ', error.error.message);
-    }
-    else {
-      console.error(`Backend returned code ${error.status},` +
-      `body was: ${error.error}` );
-    }
-
-    return throwError('Error.');
-  }
-  */
 }

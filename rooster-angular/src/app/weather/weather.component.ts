@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { WeatherItem } from '../weatherItem';
+import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'app-weather',
@@ -22,14 +23,14 @@ export class WeatherComponent implements OnInit {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private weatherService: WeatherService) { }
 
   ngOnInit() {
     this.getWeatherItem();
   }
 
   getWeatherItem(): void {
-    this.http.get<WeatherItem>(this.roosterapiBaseUrl + this.weatherItemId)
+    this.weatherService.getWeatherItem(this.weatherItemId)
       .subscribe(weatherItem => {
         this.weatherItem = weatherItem;
         this.weatherCoordinates = this.weatherItem.weatherItemLatitude + "," + this.weatherItem.weatherItemLongitude;
@@ -41,6 +42,6 @@ export class WeatherComponent implements OnInit {
     this.http.get<Object>(this.proxyUrl + this.darkSkyBaseUrl + this.weatherCoordinates)
       .subscribe(weatherData => {
         this.weatherData = weatherData;
-      });
+      });  
   }
 }
