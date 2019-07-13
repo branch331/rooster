@@ -58,7 +58,7 @@ export class WeatherService {
       );
   }
 
-  getDarkSkyData(weatherItem: WeatherItem): Object {
+  getDarkSkyData(weatherItem: WeatherItem): Observable<Object> {
     return this.http.get<Object>(this.proxyUrl 
       + this.darkSkyBaseUrl 
       + weatherItem.weatherItemLatitude 

@@ -11,14 +11,8 @@ import { DashboardService } from '../dashboard.service';
 })
 export class DashboardComponent implements OnInit {
   dashboardItems: DashboardItem[];
-
-  private roosterapiUrl = 'http://localhost:5000/api/dashboard';
   
-  private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-  };
-  
-  constructor(private http: HttpClient, private dashboardService: DashboardService) { }
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
     this.getDashboardItems();

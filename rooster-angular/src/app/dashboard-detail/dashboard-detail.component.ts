@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DashboardItem } from '../dashboardItem';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DashboardService } from '../dashboard.service';
 
 @Component({
   selector: 'app-dashboard-detail',
@@ -14,7 +15,7 @@ export class DashboardDetailComponent implements OnInit {
 
   private roosterapiUrl = 'http://localhost:5000/api/dashboard/';
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private dashboardService: DashboardService) { }
 
   ngOnInit() {
     this.getDashboardItem();
@@ -22,7 +23,7 @@ export class DashboardDetailComponent implements OnInit {
 
   getDashboardItem(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.http.get<DashboardItem>(this.roosterapiUrl + id)
+    this.dashboardService.getDashboardItem(id)
       .subscribe(dashboardItem => this.dashboardItem = dashboardItem);
     }
 }

@@ -33,15 +33,14 @@ export class WeatherComponent implements OnInit {
     this.weatherService.getWeatherItem(this.weatherItemId)
       .subscribe(weatherItem => {
         this.weatherItem = weatherItem;
-        this.weatherCoordinates = this.weatherItem.weatherItemLatitude + "," + this.weatherItem.weatherItemLongitude;
-        this.getWeatherData();
+        this.getWeatherData(weatherItem);
       });
   }
 
-  getWeatherData(): void {
-    this.http.get<Object>(this.proxyUrl + this.darkSkyBaseUrl + this.weatherCoordinates)
+  getWeatherData(weatherItem: WeatherItem): void {
+     this.weatherService.getDarkSkyData(weatherItem)
       .subscribe(weatherData => {
         this.weatherData = weatherData;
-      });  
+      });
   }
 }
