@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommuteItem } from '../commuteItem';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { CommuteService } from '../commute.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -18,49 +19,32 @@ export class CommuteComponent implements OnInit {
   commuteImage: Blob;
   commuteImagePath: string;
 
-  key = 'Ar7d_Frhf9pNH2QUoWIK95AmRObxnE0DyD2Qxxufv6be0sCu2tzX_V_mksU2A4lY';
-
-  roosterapiBaseUrl = 'http://localhost:5000/api/commute/';
-  bingDistanceApiBaseUrl = 'https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?';
-
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
+  constructor(private commuteService: CommuteService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.getCommuteItem();
   }
 
   getCommuteItem(): void {
-    this.http.get<CommuteItem>(this.roosterapiBaseUrl + this.commuteItemId)
+    this.commuteService.getCommuteItem(this.commuteItemId)
       .subscribe(commuteItem => {
         this.commuteItem = commuteItem;
         this.commuteOriginCoordinates = this.commuteItem.commuteOriginLatitude + "," + this.commuteItem.commuteOriginLongitude;
         this.commuteDestinationCoordinates = this.commuteItem.commuteDestinationLatitude + "," + this.commuteItem.commuteDestinationLongitude;
-        this.getCommuteData();
-        this.getCommuteImage();
+        this.getCommuteData(commuteItem);
+        this.getCommuteImage(commuteItem);
       });
   }
 
-  getCommuteData(): void {
-    this.http.get<Object>(this.bingDistanceApiBaseUrl 
-                          + "origins=" 
-                          + this.commuteOriginCoordinates
-                          + "&destinations="
-                          + this.commuteDestinationCoordinates
-                          + "&travelMode=driving&key="
-                          + this.key)
+  getCommuteData(commuteItem: CommuteItem): void {
+    this.commuteService.getCommuteData(commuteItem)
       .subscribe(commuteData => {
         this.commuteData = commuteData;
       });
   }
 
-  getCommuteImage(): void {
-    this.http.get("https://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes?wp.0="
-                  + this.commuteOriginCoordinates
-                  + ";46;A&wp.1="
-                  + this.commuteDestinationCoordinates
-                  + ";46;B&key="
-                  + this.key,
-                  { responseType: 'blob' })
+  getCommuteImage(commuteItem: CommuteItem): void {
+    this.commuteService.getCommuteImage(commuteItem)
       .subscribe(commuteImage => {
         this.commuteImage = commuteImage;
         this.generateImageUrl(this.commuteImage);
@@ -82,4 +66,6 @@ export class CommuteComponent implements OnInit {
     this.commuteImagePath = base64data;
     this.sanitizer.bypassSecurityTrustUrl(this.commuteImagePath);
   }
+
+
 }

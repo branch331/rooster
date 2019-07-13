@@ -4,14 +4,19 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { catchError, map, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { CommuteItem } from './commuteItem';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommuteService {
 
+  private commuteImagePath = null;
+
   private roosterApiCommuteUrl = 'http://localhost:5000/api/commute';
-  
+  private key = 'Ar7d_Frhf9pNH2QUoWIK95AmRObxnE0DyD2Qxxufv6be0sCu2tzX_V_mksU2A4lY';
+  private bingDistanceApiBaseUrl = 'https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?';
+
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   };
@@ -50,6 +55,40 @@ export class CommuteService {
     const id = typeof dashboardItem === 'number' ? dashboardItem: dashboardItem.id;
 
     return this.http.delete<CommuteItem>(this.roosterApiCommuteUrl + '/' + id, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCommuteData(commuteItem: CommuteItem): Observable<Object> {
+    return this.http.get<Object>(this.bingDistanceApiBaseUrl 
+      + "origins=" 
+      + commuteItem.commuteOriginLatitude
+      + ","
+      + commuteItem.commuteOriginLongitude
+      + "&destinations="
+      + commuteItem.commuteDestinationLatitude
+      + ","
+      + commuteItem.commuteDestinationLongitude
+      + "&travelMode=driving&key="
+      + this.key)
+        .pipe(
+          catchError(this.handleError)
+        );
+  }
+
+  getCommuteImage(commuteItem: CommuteItem): Observable<Blob> {
+    return this.http.get("https://dev.virtualearth.net/REST/v1/Imagery/Map/Road/Routes?wp.0="
+    + commuteItem.commuteOriginLatitude
+    + ','
+    + commuteItem.commuteOriginLongitude
+    + ";46;A&wp.1="
+    + commuteItem.commuteDestinationLatitude
+    + ','
+    + commuteItem.commuteDestinationLongitude
+    + ";46;B&key="
+    + this.key,
+    { responseType: 'blob' })
       .pipe(
         catchError(this.handleError)
       );
