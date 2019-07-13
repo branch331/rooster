@@ -12,9 +12,7 @@ import { DashboardService } from '../dashboard.service';
 export class DashboardDetailComponent implements OnInit {
 
   @Input() dashboardItem: DashboardItem;
-
-  private roosterapiUrl = 'http://localhost:5000/api/dashboard/';
-
+  
   constructor(private route: ActivatedRoute, private dashboardService: DashboardService) { }
 
   ngOnInit() {

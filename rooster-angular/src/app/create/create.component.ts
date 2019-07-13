@@ -20,12 +20,6 @@ export class CreateComponent {
 
   dashboardItemTypes = ['Weather', 'Commute'];
 
-  private roosterapiBaseUrl = 'http://localhost:5000/api/';
-  
-  private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-  };
-
   constructor(private dashboardService: DashboardService,
               private weatherService: WeatherService,
               private commuteSerivce: CommuteService) { }
