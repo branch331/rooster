@@ -11,3 +11,4 @@
 /Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.RazorTargetAssemblyInfo.cache
 /Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.dll
 /Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.pdb
+/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.csprojAssemblyReference.cache
