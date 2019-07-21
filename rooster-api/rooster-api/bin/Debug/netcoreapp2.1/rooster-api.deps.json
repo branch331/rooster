@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "1e7d7c186410c2c6bb80753caefce027e457f8e5"
+    "signature": "1ac52b9d71846218b1ee33b0b2991fb83e681e68"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "rooster-api/1.0.0": {
         "dependencies": {
+          "Google.Apis.Calendar.v3": "1.40.2.1643",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
@@ -48,6 +49,70 @@
         },
         "compile": {
           "lib/netstandard2.0/DnsClient.dll": {}
+        }
+      },
+      "Google.Apis/1.40.2": {
+        "dependencies": {
+          "Google.Apis.Core": "1.40.2",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.dll": {
+            "assemblyVersion": "1.40.2.0",
+            "fileVersion": "1.40.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.dll": {}
+        }
+      },
+      "Google.Apis.Auth/1.40.2": {
+        "dependencies": {
+          "Google.Apis": "1.40.2",
+          "Google.Apis.Core": "1.40.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {
+            "assemblyVersion": "1.40.2.0",
+            "fileVersion": "1.40.2.0"
+          },
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {
+            "assemblyVersion": "1.40.2.0",
+            "fileVersion": "1.40.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {}
+        }
+      },
+      "Google.Apis.Calendar.v3/1.40.2.1643": {
+        "dependencies": {
+          "Google.Apis": "1.40.2",
+          "Google.Apis.Auth": "1.40.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Calendar.v3.dll": {
+            "assemblyVersion": "1.40.2.1643",
+            "fileVersion": "1.40.2.1643"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Calendar.v3.dll": {}
+        }
+      },
+      "Google.Apis.Core/1.40.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {
+            "assemblyVersion": "1.40.2.0",
+            "fileVersion": "1.40.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {}
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
@@ -3517,6 +3582,34 @@
       "sha512": "sha512-P34wUkeqU4FoQiOMV8OjpdeDZKs4d3r+VlHuKJ6eO5feiZgna3+9MF5orHRUn3DAv1g/HPE5hlkGucmxmsFfBw==",
       "path": "dnsclient/1.2.0",
       "hashPath": "dnsclient.1.2.0.nupkg.sha512"
+    },
+    "Google.Apis/1.40.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cA0x/6oV3K2zpcK3OdqkCUB80QkuVUe9naAdlVcshelPSL9tJzKdBR11LMz4hAOpTc2vtqMm9rkQa4jgOfHRWw==",
+      "path": "google.apis/1.40.2",
+      "hashPath": "google.apis.1.40.2.nupkg.sha512"
+    },
+    "Google.Apis.Auth/1.40.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0YHiCwWF5DkKf7kpe89AjAB9FoJTu1qpPdkw3eUwfFc8ohuGQbxSVgyiieAtWhSvJ01iKH7zepdNR1PyrFPRvQ==",
+      "path": "google.apis.auth/1.40.2",
+      "hashPath": "google.apis.auth.1.40.2.nupkg.sha512"
+    },
+    "Google.Apis.Calendar.v3/1.40.2.1643": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nrO/h7Bt2ehCjbkChjbszV6j8RMbS0TgTkxUBzbSqUFt2hHmNYvSUzp30MWGc9F9aEbbvyUQe9YQQjX5cYSHEg==",
+      "path": "google.apis.calendar.v3/1.40.2.1643",
+      "hashPath": "google.apis.calendar.v3.1.40.2.1643.nupkg.sha512"
+    },
+    "Google.Apis.Core/1.40.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eOI5/BdxfRgrI+3ZGVrogatR7VvHyKvcPCRNDi1KS/ptm0CTf4+zY8I/ryrMCIrKMoW9aQamMoNjbKFruRIv8A==",
+      "path": "google.apis.core/1.40.2",
+      "hashPath": "google.apis.core.1.40.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",
