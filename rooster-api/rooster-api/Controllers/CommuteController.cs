@@ -58,9 +58,9 @@ namespace roosterapi.Controllers
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {
-            var dashboardItem = _commuteService.Get(id);
+            var commuteItem = _commuteService.Get(id);
 
-            if (dashboardItem == null)
+            if (commuteItem == null)
             {
                 return NotFound();
             }

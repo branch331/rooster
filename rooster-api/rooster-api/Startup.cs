@@ -55,9 +55,17 @@ namespace rooster_api
             services.AddSingleton<IWeatherDatabaseSettings>(sp => sp.GetRequiredService<IOptions<WeatherDatabaseSettings>>().Value);
             services.AddSingleton<WeatherService>();
 
+            var dummy1 = Configuration.GetSection(nameof(CommuteDatabaseSettings));
+
             services.Configure<CommuteDatabaseSettings>(Configuration.GetSection(nameof(CommuteDatabaseSettings)));
             services.AddSingleton<ICommuteDatabaseSettings>(sp => sp.GetRequiredService<IOptions<CommuteDatabaseSettings>>().Value);
             services.AddSingleton<CommuteService>();
+
+            var dummy = Configuration.GetSection(nameof(CalendarDatabaseSettings));
+
+            services.Configure<CalendarDatabaseSettings>(Configuration.GetSection(nameof(CalendarDatabaseSettings)));
+            services.AddSingleton<ICalendarDatabaseSettings>(sp => sp.GetRequiredService<IOptions<CalendarDatabaseSettings>>().Value);
+            services.AddSingleton<CalendarItemService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
