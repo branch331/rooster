@@ -1,7 +1,10 @@
+using System;
 using roosterapi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using roosterapi.Models;
+using Google.Apis.Calendar.v3;
+using Google.Apis.Calendar.v3.Data;
 
 namespace roosterapi.Controllers
 {
@@ -10,14 +13,40 @@ namespace roosterapi.Controllers
     public class CalendarController : ControllerBase
     {
         private readonly CalendarItemService _calendarItemService;
+        private readonly RoosterCalendarService _roosterCalendarService; //Used for Google requests
 
-        public CalendarController(CalendarItemService calendarItemService)
+        public CalendarController(CalendarItemService calendarItemService, RoosterCalendarService roosterCalendarService)
         {
             _calendarItemService = calendarItemService;
+            _roosterCalendarService = roosterCalendarService;
         }
 
         [HttpGet]
-        public ActionResult<List<CalendarItem>> Get() => _calendarItemService.Get();
+        public ActionResult<List<CalendarItem>> Get() 
+        {
+            //**/PLACED IN THIS METHOD FOR DEBUGGING ONLY**
+            List<Event> myEvents = _roosterCalendarService.getGoogleCalendarEvents(System.DateTime.Now, System.DateTime.Now.AddDays(3));
+            Console.WriteLine("Upcoming events:");
+            if (myEvents != null && myEvents.Count > 0)
+            {
+                foreach (var eventItem in myEvents)
+                {
+                    string when = eventItem.Start.DateTime.ToString();
+                    if (String.IsNullOrEmpty(when))
+                    {
+                        when = eventItem.Start.Date;
+                    }
+                    Console.WriteLine("{0} ({1})", eventItem.Summary, when);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No upcoming events found.");
+            }
+            //**/PLACED IN THIS METHOD FOR DEBUGGING ONLY**
+
+            return _calendarItemService.Get();
+        } 
 
         [HttpGet("{id:length(24)}", Name = "GetCalendarItem")]
         public ActionResult<CalendarItem> Get(string id)
@@ -32,6 +61,13 @@ namespace roosterapi.Controllers
             return calendarItem;
         }
 
+/* 
+        [HttpGet]
+        public ActionResult<List<Event>> Get(System.DateTime timeMin, System.DateTime timeMax)
+        {
+            return _roosterCalendarService.getGoogleCalendarEvents(timeMin, timeMax);
+        }
+*/
         [HttpPost]
         public ActionResult<CalendarItem> Create([FromBody] CalendarItem calendarItem)
         {

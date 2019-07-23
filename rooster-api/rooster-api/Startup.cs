@@ -45,8 +45,6 @@ namespace rooster_api
                 });
             });
 
-            ConfigureGoogleCalendarCredentials();
-
             services.Configure<DashboardDatabaseSettings>(Configuration.GetSection(nameof(DashboardDatabaseSettings)));
             services.AddSingleton<IDashboardDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DashboardDatabaseSettings>>().Value);
             services.AddSingleton<DashboardService>();
@@ -55,17 +53,18 @@ namespace rooster_api
             services.AddSingleton<IWeatherDatabaseSettings>(sp => sp.GetRequiredService<IOptions<WeatherDatabaseSettings>>().Value);
             services.AddSingleton<WeatherService>();
 
-            var dummy1 = Configuration.GetSection(nameof(CommuteDatabaseSettings));
-
             services.Configure<CommuteDatabaseSettings>(Configuration.GetSection(nameof(CommuteDatabaseSettings)));
             services.AddSingleton<ICommuteDatabaseSettings>(sp => sp.GetRequiredService<IOptions<CommuteDatabaseSettings>>().Value);
             services.AddSingleton<CommuteService>();
 
-            var dummy = Configuration.GetSection(nameof(CalendarDatabaseSettings));
-
             services.Configure<CalendarDatabaseSettings>(Configuration.GetSection(nameof(CalendarDatabaseSettings)));
             services.AddSingleton<ICalendarDatabaseSettings>(sp => sp.GetRequiredService<IOptions<CalendarDatabaseSettings>>().Value);
             services.AddSingleton<CalendarItemService>();
+
+            services.Configure<GoogleCalendarSettings>(Configuration.GetSection(nameof(GoogleCalendarSettings)));
+            services.AddSingleton<UserCredential>(ConfigureGoogleCalendarCredentials());
+            services.AddSingleton<IGoogleCalendarSettings>(sp => sp.GetRequiredService<IOptions<GoogleCalendarSettings>>().Value);
+            services.AddSingleton<RoosterCalendarService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -87,10 +86,10 @@ namespace rooster_api
             app.UseMvc();
         }
 
-        public void ConfigureGoogleCalendarCredentials()
+        public UserCredential ConfigureGoogleCalendarCredentials()
         {
             string[] Scopes = { CalendarService.Scope.CalendarReadonly };
-            string ApplicationName = "Rooster API";
+            //string ApplicationName = "Rooster API";
             UserCredential credential;
 
             using (var stream =
@@ -108,12 +107,18 @@ namespace rooster_api
                 Console.WriteLine("Credential file saved to: " + credPath);
             }
 
-                        // Create Google Calendar API service.
+            return credential;
+
+            // Create Google Calendar API service.
+            /* 
             var service = new CalendarService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
                 ApplicationName = ApplicationName,
             });
+            */
+
+            /* 
 
             // Define parameters of request.
             EventsResource.ListRequest request = service.Events.List("primary");
@@ -126,6 +131,9 @@ namespace rooster_api
 
             // List events.
             Events events = request.Execute();
+            */
+
+            /* 
             Console.WriteLine("Upcoming events:");
             if (events.Items != null && events.Items.Count > 0)
             {
@@ -143,6 +151,7 @@ namespace rooster_api
             {
                 Console.WriteLine("No upcoming events found.");
             }
+            */
         }
     }
 }
