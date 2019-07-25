@@ -25,6 +25,7 @@ namespace roosterapi.Controllers
         public ActionResult<List<CalendarItem>> Get() 
         {
             //**/PLACED IN THIS METHOD FOR DEBUGGING ONLY**
+            /* 
             List<Event> myEvents = _roosterCalendarService.getGoogleCalendarEvents(System.DateTime.Now, System.DateTime.Now.AddDays(3));
             Console.WriteLine("Upcoming events:");
             if (myEvents != null && myEvents.Count > 0)
@@ -43,9 +44,20 @@ namespace roosterapi.Controllers
             {
                 Console.WriteLine("No upcoming events found.");
             }
-            //**/PLACED IN THIS METHOD FOR DEBUGGING ONLY**
 
-            return _calendarItemService.Get();
+            */
+            List<CalendarItem> originalCalendarItemList = _calendarItemService.Get();
+            List<CalendarItem> newCalendarItemList = new List<CalendarItem>();
+
+            foreach (CalendarItem calendarItem in originalCalendarItemList)
+            {
+                CalendarItem calendarItemToAdd = calendarItem;
+                calendarItemToAdd.CalendarItemEventList = GetEventsFromGoogle(calendarItem.CalendarItemTimeMin, calendarItem.CalendarItemTimeMax);
+                newCalendarItemList.Add(calendarItem);
+                _calendarItemService.Update(calendarItemToAdd.Id, calendarItemToAdd);
+            }
+
+            return newCalendarItemList;
         } 
 
         [HttpGet("{id:length(24)}", Name = "GetCalendarItem")]
@@ -58,16 +70,12 @@ namespace roosterapi.Controllers
                 return NotFound();
             }
 
+            calendarItem.CalendarItemEventList = GetEventsFromGoogle(calendarItem.CalendarItemTimeMin, calendarItem.CalendarItemTimeMax);
+            _calendarItemService.Update(id, calendarItem);
+
             return calendarItem;
         }
 
-/* 
-        [HttpGet]
-        public ActionResult<List<Event>> Get(System.DateTime timeMin, System.DateTime timeMax)
-        {
-            return _roosterCalendarService.getGoogleCalendarEvents(timeMin, timeMax);
-        }
-*/
         [HttpPost]
         public ActionResult<CalendarItem> Create([FromBody] CalendarItem calendarItem)
         {
@@ -104,6 +112,33 @@ namespace roosterapi.Controllers
             _calendarItemService.Remove(id);
 
             return NoContent();
+        }
+
+        public List<Event> GetEventsFromGoogle(DateTime timeMin, DateTime timeMax)
+        {
+            List<Event> myEvents = _roosterCalendarService.getGoogleCalendarEvents(timeMin, timeMax);
+            Console.WriteLine("Upcoming events:");
+
+            /* 
+            if (myEvents != null && myEvents.Count > 0)
+            {
+                foreach (var eventItem in myEvents)
+                {
+                    string when = eventItem.Start.DateTime.ToString();
+                    if (String.IsNullOrEmpty(when))
+                    {
+                        when = eventItem.Start.Date;
+                    }
+                    Console.WriteLine("{0} ({1})", eventItem.Summary, when);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No upcoming events found.");
+            }
+
+            */
+            return myEvents;
         }
     }
 }
