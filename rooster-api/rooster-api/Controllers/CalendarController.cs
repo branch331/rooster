@@ -114,12 +114,25 @@ namespace roosterapi.Controllers
             return NoContent();
         }
 
-        public List<Event> GetEventsFromGoogle(DateTime timeMin, DateTime timeMax)
+        public List<RoosterEvent> GetEventsFromGoogle(DateTime timeMin, DateTime timeMax)
         {
+            List<RoosterEvent> roosterEventList = new List<RoosterEvent>();
             List<Event> myEvents = _roosterCalendarService.getGoogleCalendarEvents(timeMin, timeMax);
+            
+            foreach (var eventItem in myEvents)
+            {
+                roosterEventList.Add(
+                    new RoosterEvent(
+                        eventItem.Summary, 
+                        eventItem.Location, 
+                        eventItem.Start.DateTime ?? DateTime.Now, 
+                        eventItem.End.DateTime ?? DateTime.Now.AddDays(1)
+                    )
+                );
+            }
+            /* 
             Console.WriteLine("Upcoming events:");
 
-            /* 
             if (myEvents != null && myEvents.Count > 0)
             {
                 foreach (var eventItem in myEvents)
@@ -138,7 +151,7 @@ namespace roosterapi.Controllers
             }
 
             */
-            return myEvents;
+            return roosterEventList;
         }
     }
 }
