@@ -10,7 +10,7 @@ import { DashboardItem } from './dashboardItem';
 })
 export class DashboardService {
 
-  private roosterApiDashboardUrl = 'http://localhost:5000/api/dashboard';
+  private roosterApiDashboardUrl = 'https://localhost:5000/api/dashboard';
   
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})

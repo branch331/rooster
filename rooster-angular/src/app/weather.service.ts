@@ -11,7 +11,7 @@ import { throwError } from 'rxjs';
 })
 export class WeatherService {
 
-  private roosterApiWeatherUrl = 'http://localhost:5000/api/weather';
+  private roosterApiWeatherUrl = 'https://localhost:5000/api/weather';
   private proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   private darkSkyBaseUrl = 'https://api.darksky.net/forecast/1173017e849e9872e6537772ce11609c/';
 

@@ -1,3 +1,18 @@
-<p>
-  calendar works!
-</p>
+<div *ngIf="calendarItem">
+    {{ calendarItem.calendarItemName }}
+    {{ calendarItem.calendarItemTimeMin }}
+    {{ calendarItem.calendarItemTimeMax }}
+    <ul>
+      <li *ngFor="let event of calendarItem.calendarItemEventList">
+        <p>
+            {{ event.summary }}
+        </p>
+        <p>
+            {{ event.location }}
+        </p>
+        <p>
+            {{ event.startDateTime }} - {{ event.endDateTime }}
+        </p>
+      </li>
+    </ul>
+</div>
