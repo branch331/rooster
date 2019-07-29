@@ -52,7 +52,7 @@ namespace roosterapi.Controllers
             foreach (CalendarItem calendarItem in originalCalendarItemList)
             {
                 CalendarItem calendarItemToAdd = calendarItem;
-                calendarItemToAdd.CalendarItemEventList = GetEventsFromGoogle(calendarItem.CalendarItemTimeMin, calendarItem.CalendarItemTimeMax);
+                calendarItemToAdd.CalendarItemEventList = GetEventsFromGoogle(DateTime.Now, DateTime.Now.AddDays(calendarItem.CalendarItemTimeRange));
                 newCalendarItemList.Add(calendarItem);
                 _calendarItemService.Update(calendarItemToAdd.Id, calendarItemToAdd);
             }
@@ -70,7 +70,7 @@ namespace roosterapi.Controllers
                 return NotFound();
             }
 
-            calendarItem.CalendarItemEventList = GetEventsFromGoogle(calendarItem.CalendarItemTimeMin, calendarItem.CalendarItemTimeMax);
+            calendarItem.CalendarItemEventList = GetEventsFromGoogle(DateTime.Now, DateTime.Now.AddDays(calendarItem.CalendarItemTimeRange));
             _calendarItemService.Update(id, calendarItem);
 
             return calendarItem;
@@ -130,27 +130,7 @@ namespace roosterapi.Controllers
                     )
                 );
             }
-            /* 
-            Console.WriteLine("Upcoming events:");
-
-            if (myEvents != null && myEvents.Count > 0)
-            {
-                foreach (var eventItem in myEvents)
-                {
-                    string when = eventItem.Start.DateTime.ToString();
-                    if (String.IsNullOrEmpty(when))
-                    {
-                        when = eventItem.Start.Date;
-                    }
-                    Console.WriteLine("{0} ({1})", eventItem.Summary, when);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No upcoming events found.");
-            }
-
-            */
+            
             return roosterEventList;
         }
     }

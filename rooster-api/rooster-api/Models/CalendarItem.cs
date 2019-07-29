@@ -11,13 +11,8 @@ namespace roosterapi.Models
         [BsonElement("Name")]
         public string CalendarItemName { get; set; }
 
-        [BsonElement("TimeMin")]
-        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-        public DateTime CalendarItemTimeMin { get; set; }
-
-        [BsonElement("TimeMax")]
-        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-        public DateTime CalendarItemTimeMax { get; set; }
+        [BsonElement("EventTimeRange")]
+        public double CalendarItemTimeRange { get; set; }
 
         [BsonElement("EventList")]
         public List<RoosterEvent> CalendarItemEventList { get; set; }

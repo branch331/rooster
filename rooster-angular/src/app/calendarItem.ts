@@ -1,7 +1,6 @@
 export class CalendarItem {
     id: string;
     calendarItemName: string;
-    calendarItemTimeMin: string;
-    calendarItemTimeMax: string;
+    calendarItemTimeRange: number;
     calendarItemEventList: object[];
 }

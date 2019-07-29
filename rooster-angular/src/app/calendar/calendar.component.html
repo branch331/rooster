@@ -1,7 +1,6 @@
 <div *ngIf="calendarItem">
     {{ calendarItem.calendarItemName }}
-    {{ calendarItem.calendarItemTimeMin }}
-    {{ calendarItem.calendarItemTimeMax }}
+    {{ calendarItem.calendarItemTimeRange }}
     <ul>
       <li *ngFor="let event of calendarItem.calendarItemEventList">
         <p>
