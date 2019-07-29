@@ -3,53 +3,53 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { DashboardItem } from './dashboardItem';
+import { CalendarItem } from './calendarItem';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DashboardService {
+export class CalendarService {
 
-  private roosterApiDashboardUrl = 'https://localhost:5000/api/dashboard';
-  
+  private roosterApiCalendarUrl = 'https://localhost:5000/api/calendar';
+
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   };
 
   constructor(private http: HttpClient) { }
 
-  getDashboardItems(): Observable<DashboardItem[]> {
-    return this.http.get<DashboardItem[]>(this.roosterApiDashboardUrl)
+  getCalendarItems(): Observable<CalendarItem[]> {
+    return this.http.get<CalendarItem[]>(this.roosterApiCalendarUrl)
       .pipe(
         catchError(this.handleError)
       )
   }
 
-  getDashboardItem(id: string): Observable<DashboardItem> {
-    return this.http.get<DashboardItem>(this.roosterApiDashboardUrl + "/" + id)
+  getCalendarItem(id: string): Observable<CalendarItem> {
+    return this.http.get<CalendarItem>(this.roosterApiCalendarUrl + "/" + id)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  addDashboardItem(dashboardItem: DashboardItem): Observable<DashboardItem> {
-    return this.http.post<DashboardItem>(this.roosterApiDashboardUrl, dashboardItem, this.httpOptions)
+  addCalendarItem(calendarItem: CalendarItem): Observable<CalendarItem> {
+    return this.http.post<CalendarItem>(this.roosterApiCalendarUrl, calendarItem, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  updateDashboardItem(dashboardItem: DashboardItem): Observable<any> {
-    return this.http.put(this.roosterApiDashboardUrl, dashboardItem, this.httpOptions)
+  updateCalendarItem(calendarItem: CalendarItem): Observable<any> {
+    return this.http.put(this.roosterApiCalendarUrl, calendarItem, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  deleteDashboardItem(dashboardItem: DashboardItem | number): Observable<DashboardItem> {
-    const id = typeof dashboardItem === 'number' ? dashboardItem: dashboardItem.id;
+  deleteCalendarItem(calendarItem: CalendarItem | number): Observable<CalendarItem> {
+    const id = typeof calendarItem === 'number' ? calendarItem: calendarItem.id;
 
-    return this.http.delete<DashboardItem>(this.roosterApiDashboardUrl + '/' + id, this.httpOptions)
+    return this.http.delete<CalendarItem>(this.roosterApiCalendarUrl + '/' + id, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );

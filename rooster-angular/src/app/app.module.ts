@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreateComponent } from './create/create.component';
 import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.component';
 import { FormsModule } from '@angular/forms';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     WeatherComponent,
     CommuteComponent,
     CreateComponent,
-    DashboardDetailComponent
+    DashboardDetailComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

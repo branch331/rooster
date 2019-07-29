@@ -13,7 +13,7 @@ export class CommuteService {
 
   private commuteImagePath = null;
 
-  private roosterApiCommuteUrl = 'http://localhost:5000/api/commute';
+  private roosterApiCommuteUrl = 'https://localhost:5000/api/commute';
   private key = 'Ar7d_Frhf9pNH2QUoWIK95AmRObxnE0DyD2Qxxufv6be0sCu2tzX_V_mksU2A4lY';
   private bingDistanceApiBaseUrl = 'https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?';
 
@@ -51,8 +51,8 @@ export class CommuteService {
       );
   }
 
-  deleteCommuteItem(dashboardItem: CommuteItem | number): Observable<CommuteItem> {
-    const id = typeof dashboardItem === 'number' ? dashboardItem: dashboardItem.id;
+  deleteCommuteItem(commuteItem: CommuteItem | number): Observable<CommuteItem> {
+    const id = typeof commuteItem === 'number' ? commuteItem: commuteItem.id;
 
     return this.http.delete<CommuteItem>(this.roosterApiCommuteUrl + '/' + id, this.httpOptions)
       .pipe(

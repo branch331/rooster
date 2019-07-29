@@ -1,0 +1,17 @@
+<div *ngIf="calendarItem">
+    {{ calendarItem.calendarItemName }}
+    {{ calendarItem.calendarItemTimeRange }}
+    <ul>
+      <li *ngFor="let event of calendarItem.calendarItemEventList">
+        <p>
+            {{ event.summary }}
+        </p>
+        <p>
+            {{ event.location }}
+        </p>
+        <p>
+            {{ event.startDateTime }} - {{ event.endDateTime }}
+        </p>
+      </li>
+    </ul>
+</div>

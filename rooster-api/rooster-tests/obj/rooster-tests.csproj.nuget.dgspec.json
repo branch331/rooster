@@ -1,0 +1,143 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-tests/rooster-tests.csproj": {}
+  },
+  "projects": {
+    "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/rooster-api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/rooster-api.csproj",
+        "projectName": "rooster-api",
+        "projectPath": "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/rooster-api.csproj",
+        "packagesPath": "/Users/bnguyen/.nuget/packages/",
+        "outputPath": "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/bnguyen/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.8.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-tests/rooster-tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-tests/rooster-tests.csproj",
+        "projectName": "rooster-tests",
+        "projectPath": "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-tests/rooster-tests.csproj",
+        "packagesPath": "/Users/bnguyen/.nuget/packages/",
+        "outputPath": "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-tests/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/bnguyen/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/rooster-api.csproj": {
+                "projectPath": "/Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/rooster-api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.8.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.12.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.10.0, )"
+            },
+            "nunit": {
+              "target": "Package",
+              "version": "[3.10.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

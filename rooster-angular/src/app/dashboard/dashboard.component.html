@@ -14,6 +14,11 @@
         <app-commute [commuteItemId]="dashboardItem.dashboardItemReferenceId"></app-commute>
     </div>
 
+    <div class="dashboardItemContents" *ngIf="dashboardItem.dashboardItemType == 'Calendar'">
+        <h4 id="dashboardItemHeader">{{ dashboardItem.dashboardItemName }}</h4>
+        <app-calendar [calendarItemId]="dashboardItem.dashboardItemReferenceId"></app-calendar>
+    </div>
+
     <nav>
       <a routerLink="{{ dashboardItem.id }}"><button>Details</button></a>
     </nav>
