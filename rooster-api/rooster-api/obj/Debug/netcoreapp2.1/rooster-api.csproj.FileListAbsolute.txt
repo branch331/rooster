@@ -12,3 +12,17 @@
 /Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.dll
 /Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.pdb
 /Users/bnguyen/Documents/GitHub/rooster/rooster-api/rooster-api/obj/Debug/netcoreapp2.1/rooster-api.csprojAssemblyReference.cache
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\bin\Debug\netcoreapp2.1\rooster-api.deps.json
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\bin\Debug\netcoreapp2.1\rooster-api.runtimeconfig.json
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\bin\Debug\netcoreapp2.1\rooster-api.runtimeconfig.dev.json
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\bin\Debug\netcoreapp2.1\rooster-api.dll
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\bin\Debug\netcoreapp2.1\rooster-api.pdb
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\obj\Debug\netcoreapp2.1\rooster-api.csprojAssemblyReference.cache
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\obj\Debug\netcoreapp2.1\rooster-api.csproj.CoreCompileInputs.cache
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\obj\Debug\netcoreapp2.1\rooster-api.RazorAssemblyInfo.cache
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\obj\Debug\netcoreapp2.1\rooster-api.RazorAssemblyInfo.cs
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\obj\Debug\netcoreapp2.1\rooster-api.AssemblyInfoInputs.cache
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\obj\Debug\netcoreapp2.1\rooster-api.AssemblyInfo.cs
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\obj\Debug\netcoreapp2.1\rooster-api.RazorTargetAssemblyInfo.cache
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\obj\Debug\netcoreapp2.1\rooster-api.dll
+C:\Users\brand\Documents\GitHub\rooster\rooster-api\rooster-api\obj\Debug\netcoreapp2.1\rooster-api.pdb

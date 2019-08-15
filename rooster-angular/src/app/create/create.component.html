@@ -1,7 +1,3 @@
-<p>
-  create works!
-</p>
-
 <form (ngSubmit)="onSubmit()" #dashboardForm="ngForm">
   <div class="form-group">
     <label for="dashboardItemName">Name</label>
@@ -12,9 +8,7 @@
     required
     [(ngModel)]="dashboardItem.dashboardItemName"
     name="dashboardItemName">
-
-    <p>REMOVE THIS: {{ dashboardItem.dashboardItemName }}</p>
-
+    
     <label for="dashboardItemType">Type</label>
 
     <select type="text" 
@@ -125,12 +119,32 @@
         [(ngModel)]="commuteItem.commuteDestinationLongitude"
         name="commuteDestinationLongitude">
       </div>
+
+      <div *ngSwitchCase="'Calendar'">
+        <label for="calendarItemName">Name</label>
+        <input type="text"
+        class="form-control"
+        id="calendarItemName"
+        placeholder="Name"
+        required
+        [(ngModel)]="calendarItem.calendarItemName"
+        name="calendarItemName">
+
+        <label for="calendarItemTimeRange">Time Range for Events</label>
+        <input type="number"
+        class="form-control"
+        id="calendarItemTimeRange"
+        placeholder=1
+        required
+        [(ngModel)]="calendarItem.calendarItemTimeRange"
+        name="calendarItemTimeRange">
+      </div>
+
       <div *ngSwitchDefault>
         <!--Empty default case-->
       </div>
     </div>
 
-    <p> REMOVE THIS: {{ dashboardItem.dashboardItemType }} </p>
     <button type="submit" class="btn btn-success">Submit!</button>
   </div>
 
