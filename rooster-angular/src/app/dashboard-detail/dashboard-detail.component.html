@@ -1,4 +1,25 @@
-<p *ngIf="dashboardItem">
-  {{ dashboardItem.id }}
-  {{ dashboardItem.dashboardItemName }}
-</p>
+<div *ngIf="dashboardItem">
+  <h2>
+    Detail!
+  </h2>
+  <p>
+    {{ dashboardItem.dashboardItemName }}
+  </p>
+  <p>
+    {{ dashboardItem.dashboardItemType }}
+  </p>
+
+  <div [ngSwitch]="dashboardItem.dashboardItemType">
+      <div *ngSwitchCase="'Weather'">
+        <p>Weather Item: {{ weatherItem.weatherItemName }}</p>
+      </div>
+    
+      <div *ngSwitchCase="'Commute'">
+        <p>Commute: {{ commuteItem.commuteItemName }}</p>
+      </div>
+    
+      <div *ngSwitchCase="'Calendar'">
+        <p>Calendar: {{ calendarItem.calendarItemName }} </p>
+      </div>
+    </div>
+</div>

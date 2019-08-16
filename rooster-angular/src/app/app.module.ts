@@ -11,6 +11,8 @@ import { CreateComponent } from './create/create.component';
 import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.component';
 import { FormsModule } from '@angular/forms';
 import { CalendarComponent } from './calendar/calendar.component';
+import { DashboardDeleteComponent } from './dashboard-delete/dashboard-delete.component';
+import { DashboardEditComponent } from './dashboard-edit/dashboard-edit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CalendarComponent } from './calendar/calendar.component';
     CommuteComponent,
     CreateComponent,
     DashboardDetailComponent,
-    CalendarComponent
+    CalendarComponent,
+    DashboardDeleteComponent,
+    DashboardEditComponent
   ],
   imports: [
     BrowserModule,

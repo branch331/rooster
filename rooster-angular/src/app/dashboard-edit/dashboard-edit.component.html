@@ -1,0 +1,156 @@
+<div *ngIf="dashboardItem">
+  Edit!
+
+  <form (ngSubmit)="onSubmit()" #dashboardForm="ngForm">
+    <div class="form-group">
+      <label for="dashboardItemName">Name</label>
+      <input type="text" 
+      class="form-control" 
+      id="dashboardItemName" 
+      placeholder="{{dashboardItem.dashboardItemName}}"
+      required
+      [(ngModel)]="dashboardItem.dashboardItemName"
+      name="dashboardItemName">
+      
+      <label for="dashboardItemType">Type</label>
+
+      <select type="text" 
+      class="form-control" 
+      id="dashboardItemType" 
+      required
+      [(ngModel)]="dashboardItem.dashboardItemType"
+      name="dashboardItemType">
+        <option *ngFor="let type of dashboardItemTypes" 
+        [value]="type">
+          {{ dashboardItem.dashboardItemType }} 
+        </option>
+      </select>
+
+      <div [ngSwitch]="dashboardItem.dashboardItemType">
+        <div *ngSwitchCase="'Weather'">
+
+          <label for="weatherItemName">Weather Item Name</label>
+          <input type="text"
+          class="form-control" 
+          id="weatherItemName" 
+          placeholder="Weather Item Name"
+          required
+          [(ngModel)]="weatherItem.weatherItemName"
+          name="weatherItemName">
+
+          <label for="weatherItemLatitude">Latitude</label>
+          <input type="text"
+          class="form-control" 
+          id="weatherItemLatitude" 
+          placeholder="Latitude"
+          required
+          [(ngModel)]="weatherItem.weatherItemLatitude"
+          name="weatherItemLatitude">
+
+          <label for="weatherItemLongitude">Longitude</label>
+          <input type="text"
+          class="form-control" 
+          id="weatherItemLongitude" 
+          placeholder="Longitude"
+          required
+          [(ngModel)]="weatherItem.weatherItemLongitude"
+          name="weatherItemLongitude">
+
+        </div>
+        <div *ngSwitchCase="'Commute'">
+
+          <label for="commuteItemName">Commute Item Name</label>
+          <input type="text"
+          class="form-control" 
+          id="commuteItemName" 
+          placeholder="Commute Item Name"
+          required
+          [(ngModel)]="commuteItem.commuteItemName"
+          name="commuteItemName">
+
+          <label for="commuteOriginName">Origin Name</label>
+          <input type="text"
+          class="form-control" 
+          id="commuteOriginName" 
+          placeholder="Origin Name"
+          required
+          [(ngModel)]="commuteItem.commuteOriginName"
+          name="commuteOriginName">
+
+          <label for="commuteOriginLatitude">Latitude</label>
+          <input type="text"
+          class="form-control" 
+          id="commuteOriginLatitude" 
+          placeholder="Latitude"
+          required
+          [(ngModel)]="commuteItem.commuteOriginLatitude"
+          name="commuteOriginLatitude">
+
+          <label for="commuteOriginLongitude">Longitude</label>
+          <input type="text"
+          class="form-control" 
+          id="commuteOriginLongitude" 
+          placeholder="Longitude"
+          required
+          [(ngModel)]="commuteItem.commuteOriginLongitude"
+          name="commuteOriginLongitude">
+
+          <label for="commuteDestinationName">Destination Name</label>
+          <input type="text"
+          class="form-control" 
+          id="commuteDestinationName" 
+          placeholder="Destination Name"
+          required
+          [(ngModel)]="commuteItem.commuteDestinationName"
+          name="commuteDestinationName">
+
+          <label for="commuteDestinationLatitude">Latitude</label>
+          <input type="text"
+          class="form-control" 
+          id="commuteDestinationLatitude" 
+          placeholder="Latitude"
+          required
+          [(ngModel)]="commuteItem.commuteDestinationLatitude"
+          name="commuteDestinationLatitude">
+
+          <label for="commuteDestinationLongitude">Longitude</label>
+          <input type="text"
+          class="form-control" 
+          id="commuteDestinationLongitude" 
+          placeholder="Longitude"
+          required
+          [(ngModel)]="commuteItem.commuteDestinationLongitude"
+          name="commuteDestinationLongitude">
+        </div>
+
+        <div *ngSwitchCase="'Calendar'">
+          <label for="calendarItemName">Name</label>
+          <input type="text"
+          class="form-control"
+          id="calendarItemName"
+          placeholder="Name"
+          required
+          [(ngModel)]="calendarItem.calendarItemName"
+          name="calendarItemName">
+
+          <label for="calendarItemTimeRange">Time Range for Events</label>
+          <input type="number"
+          class="form-control"
+          id="calendarItemTimeRange"
+          placeholder=1
+          required
+          [(ngModel)]="calendarItem.calendarItemTimeRange"
+          name="calendarItemTimeRange">
+        </div>
+
+        <div *ngSwitchDefault>
+          <!--Empty default case-->
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit!</button>
+    </div>
+
+  </form>
+
+</div>

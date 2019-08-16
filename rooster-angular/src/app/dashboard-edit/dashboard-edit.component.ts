@@ -6,24 +6,27 @@ import { DashboardService } from '../dashboard.service';
 import { WeatherItem } from '../weatherItem';
 import { CommuteItem } from '../commuteItem';
 import { CalendarItem } from '../calendarItem';
+import { throwError } from 'rxjs';
 import { WeatherService } from '../weather.service'
 import { CommuteService } from '../commute.service'
 import { CalendarService } from '../calendar.service'
 
 @Component({
-  selector: 'app-dashboard-detail',
-  templateUrl: './dashboard-detail.component.html',
-  styleUrls: ['./dashboard-detail.component.css']
+  selector: 'app-dashboard-edit',
+  templateUrl: './dashboard-edit.component.html',
+  styleUrls: ['./dashboard-edit.component.css']
 })
-export class DashboardDetailComponent implements OnInit {
+export class DashboardEditComponent implements OnInit {
+  @Input() dashboardItem: DashboardItem;
+
   weatherItem = new WeatherItem();
   commuteItem = new CommuteItem();
   calendarItem = new CalendarItem();
 
-  @Input() dashboardItem: DashboardItem;
+  dashboardItemTypes = ['Weather', 'Commute', 'Calendar'];
   
   constructor(private route: ActivatedRoute, 
-    private dashboardService: DashboardService,
+    private dashboardService: DashboardService,    
     private weatherService: WeatherService,
     private commuteService: CommuteService,
     private calendarService: CalendarService) { }
