@@ -11,15 +11,30 @@
 
   <div [ngSwitch]="dashboardItem.dashboardItemType">
       <div *ngSwitchCase="'Weather'">
-        <p>Weather Item: {{ weatherItem.weatherItemName }}</p>
+
+        {{ weatherItem.weatherItemName }} ({{ weatherItem.weatherItemLatitude }}, {{ weatherItem.weatherItemLongitude }})
+
       </div>
-    
       <div *ngSwitchCase="'Commute'">
-        <p>Commute: {{ commuteItem.commuteItemName }}</p>
-      </div>
-    
+
+        {{ commuteItem.commuteItemName }}
+
+        <p>
+            Origin: {{ commuteItem.commuteOriginName }} ({{ commuteItem.commuteOriginLatitude }}, {{ commuteItem.commuteOriginLongitude }})
+        </p>
+
+        <p>
+          Destination: {{ commuteItem.commuteDestinationName }} ({{ commuteItem.commuteOriginLatitude }}, {{ commuteItem.commuteOriginLongitude }})
+        </p>
+
       <div *ngSwitchCase="'Calendar'">
-        <p>Calendar: {{ calendarItem.calendarItemName }} </p>
+        {{ calendarItem.calendarItemName }}
+
+        {{ calendarItem.calendarItemTimeRange }}
+      </div>
+
+      <div *ngSwitchDefault>
+        <!--Empty default case-->
       </div>
     </div>
-</div>
+  </div>
