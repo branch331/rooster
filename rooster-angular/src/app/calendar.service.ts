@@ -40,7 +40,7 @@ export class CalendarService {
   }
 
   updateCalendarItem(calendarItem: CalendarItem): Observable<any> {
-    return this.http.put(this.roosterApiCalendarUrl, calendarItem, this.httpOptions)
+    return this.http.put(this.roosterApiCalendarUrl + '/' + calendarItem.id, calendarItem, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );

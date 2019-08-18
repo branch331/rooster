@@ -26,11 +26,15 @@
         <p>
           Destination: {{ commuteItem.commuteDestinationName }} ({{ commuteItem.commuteOriginLatitude }}, {{ commuteItem.commuteOriginLongitude }})
         </p>
+      </div>
 
       <div *ngSwitchCase="'Calendar'">
-        {{ calendarItem.calendarItemName }}
-
-        {{ calendarItem.calendarItemTimeRange }}
+          <p>
+            {{ calendarItem.calendarItemName }}
+          </p>
+          <p>
+            {{ calendarItem.calendarItemTimeRange }}
+          </p>
       </div>
 
       <div *ngSwitchDefault>

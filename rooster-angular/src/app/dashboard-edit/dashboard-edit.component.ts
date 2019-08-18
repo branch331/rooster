@@ -64,4 +64,25 @@ export class DashboardEditComponent implements OnInit {
         });
     }
   }
+
+  onSubmit() {
+    if (this.dashboardItem.dashboardItemType == "Weather") {
+      this.weatherService.updateWeatherItem(this.weatherItem)
+        .subscribe(response => alert("Updated weather item"));
+    }
+    else if (this.dashboardItem.dashboardItemType == "Commute") {
+      this.commuteService.updateCommuteItem(this.commuteItem)
+        .subscribe(response => alert("Updated commute item"));
+    }
+    else if (this.dashboardItem.dashboardItemType == "Calendar") {
+      this.calendarService.updateCalendarItem(this.calendarItem)
+        .subscribe(response => alert("Updated calendar item"));
+    }
+    this.updateDashboardItem();
+  }
+
+  updateDashboardItem(): void {
+    this.dashboardService.updateDashboardItem(this.dashboardItem)
+      .subscribe(response => alert("Updated dashboard item"));
+  }
 }

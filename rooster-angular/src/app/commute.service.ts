@@ -45,7 +45,7 @@ export class CommuteService {
   }
 
   updateCommuteItem(commuteItem: CommuteItem): Observable<any> {
-    return this.http.put(this.roosterApiCommuteUrl, commuteItem, this.httpOptions)
+    return this.http.put(this.roosterApiCommuteUrl + '/' + commuteItem.id, commuteItem, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );

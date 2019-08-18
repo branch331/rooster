@@ -11,18 +11,17 @@
       required
       [(ngModel)]="dashboardItem.dashboardItemName"
       name="dashboardItemName">
-      
-      <label for="dashboardItemType">Type</label>
-
+    
       <select type="text" 
       class="form-control" 
       id="dashboardItemType" 
       required
       [(ngModel)]="dashboardItem.dashboardItemType"
-      name="dashboardItemType">
+      name="dashboardItemType"
+      hidden="true">
         <option *ngFor="let type of dashboardItemTypes" 
         [value]="type">
-          {{ dashboardItem.dashboardItemType }} 
+          {{ type }} 
         </option>
       </select>
 
@@ -147,7 +146,6 @@
           <!--Empty default case-->
         </div>
       </div>
-
       <button type="submit" class="btn btn-success">Submit!</button>
     </div>
 

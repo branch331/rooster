@@ -40,7 +40,7 @@ export class DashboardService {
   }
 
   updateDashboardItem(dashboardItem: DashboardItem): Observable<any> {
-    return this.http.put(this.roosterApiDashboardUrl, dashboardItem, this.httpOptions)
+    return this.http.put(this.roosterApiDashboardUrl + '/' + dashboardItem.id, dashboardItem, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );

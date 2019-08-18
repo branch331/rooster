@@ -43,7 +43,7 @@ export class WeatherService {
   }
 
   updateWeatherItem(weatherItem: WeatherItem): Observable<any> {
-    return this.http.put(this.roosterApiWeatherUrl, weatherItem, this.httpOptions)
+    return this.http.put(this.roosterApiWeatherUrl + '/' + weatherItem.id, weatherItem, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );
