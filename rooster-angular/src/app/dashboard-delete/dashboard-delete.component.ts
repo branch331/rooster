@@ -71,6 +71,8 @@ export class DashboardDeleteComponent implements OnInit {
         break;
       }
     }
+
+    this.router.navigate(['/dashboard']);
   }
 
   onCancel() {

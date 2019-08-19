@@ -114,7 +114,7 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[15.8.0, )"
+              "version": "[16.2.0, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -128,11 +128,11 @@
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[3.10.0, )"
+              "version": "[3.14.0, )"
             },
             "nunit": {
               "target": "Package",
-              "version": "[3.10.1, )"
+              "version": "[3.12.0, )"
             }
           },
           "imports": [

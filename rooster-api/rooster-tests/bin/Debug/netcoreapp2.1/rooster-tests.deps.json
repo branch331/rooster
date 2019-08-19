@@ -1,17 +1,17 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "baf2adc3c1ec67d694ef1fc30831e9fb5cadccd3"
+    "signature": "d520affc88e282dbc3411756d500970589344e13"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "rooster-tests/1.0.0": {
         "dependencies": {
-          "Microsoft.NET.Test.Sdk": "15.8.0",
+          "Microsoft.NET.Test.Sdk": "16.2.0",
           "Moq": "4.12.0",
-          "NUnit3TestAdapter": "3.10.0",
-          "NUnit": "3.10.1",
+          "NUnit3TestAdapter": "3.14.0",
+          "NUnit": "3.12.0",
           "rooster-api": "1.0.0"
         },
         "runtime": {
@@ -99,11 +99,11 @@
           }
         }
       },
-      "Microsoft.CodeCoverage/15.8.0": {
+      "Microsoft.CodeCoverage/16.2.0": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
             "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.27718.3008"
+            "fileVersion": "16.0.28223.3002"
           }
         }
       },
@@ -145,46 +145,13 @@
           }
         }
       },
-      "Microsoft.DotNet.PlatformAbstractions/1.0.3": {
+      "Microsoft.NET.Test.Sdk/16.2.0": {
         "dependencies": {
-          "System.AppContext": "4.1.0",
-          "System.Collections": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.IO.FileSystem": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {
-            "assemblyVersion": "1.0.1.0",
-            "fileVersion": "1.0.1.0"
-          }
+          "Microsoft.CodeCoverage": "16.2.0",
+          "Microsoft.TestPlatform.TestHost": "16.2.0"
         }
       },
-      "Microsoft.Extensions.DependencyModel/1.0.3": {
-        "dependencies": {
-          "Microsoft.DotNet.PlatformAbstractions": "1.0.3",
-          "Newtonsoft.Json": "10.0.2",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Linq": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll": {
-            "assemblyVersion": "1.0.1.0",
-            "fileVersion": "1.0.1.0"
-          }
-        }
-      },
-      "Microsoft.NET.Test.Sdk/15.8.0": {
-        "dependencies": {
-          "Microsoft.CodeCoverage": "15.8.0",
-          "Microsoft.TestPlatform.TestHost": "15.8.0"
-        }
-      },
-      "Microsoft.TestPlatform.ObjectModel/15.8.0": {
+      "Microsoft.TestPlatform.ObjectModel/16.2.0": {
         "dependencies": {
           "System.ComponentModel.EventBasedAsync": "4.3.0",
           "System.ComponentModel.TypeConverter": "4.3.0",
@@ -295,10 +262,9 @@
           }
         }
       },
-      "Microsoft.TestPlatform.TestHost/15.8.0": {
+      "Microsoft.TestPlatform.TestHost/16.2.0": {
         "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "1.0.3",
-          "Microsoft.TestPlatform.ObjectModel": "15.8.0",
+          "Microsoft.TestPlatform.ObjectModel": "16.2.0",
           "Newtonsoft.Json": "10.0.2"
         },
         "runtime": {
@@ -307,6 +273,10 @@
             "fileVersion": "15.0.0.0"
           },
           "lib/netstandard1.5/Microsoft.TestPlatform.CrossPlatEngine.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.0.0.0"
+          },
+          "lib/netstandard1.5/Microsoft.TestPlatform.Utilities.dll": {
             "assemblyVersion": "15.0.0.0",
             "fileVersion": "15.0.0.0"
           },
@@ -539,15 +509,15 @@
           }
         }
       },
-      "NUnit/3.10.1": {
+      "NUnit/3.12.0": {
         "runtime": {
           "lib/netstandard2.0/nunit.framework.dll": {
-            "assemblyVersion": "3.10.1.0",
-            "fileVersion": "3.10.1.0"
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
           }
         }
       },
-      "NUnit3TestAdapter/3.10.0": {
+      "NUnit3TestAdapter/3.14.0": {
         "dependencies": {
           "Microsoft.DotNet.InternalAbstractions": "1.0.0",
           "System.ComponentModel.EventBasedAsync": "4.3.0",
@@ -1648,12 +1618,12 @@
       "path": "google.apis.core/1.40.2",
       "hashPath": "google.apis.core.1.40.2.nupkg.sha512"
     },
-    "Microsoft.CodeCoverage/15.8.0": {
+    "Microsoft.CodeCoverage/16.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2hwgoDq1ipHizvgBJG3SBhOnAQlq8eeyk19o2ywauP11+5DjkmDTNUjYglQsHgKKOkvPvCOAaFflQlLbkQnz3Q==",
-      "path": "microsoft.codecoverage/15.8.0",
-      "hashPath": "microsoft.codecoverage.15.8.0.nupkg.sha512"
+      "sha512": "sha512-fKiUOhhMP3IN1qM2tDHPWzW4JRbriFkIPiIzKUwMWT+Q+80bycxkLLCvxmVFoeA7gvWegNbTUjaX7mL3MM9XKg==",
+      "path": "microsoft.codecoverage/16.2.0",
+      "hashPath": "microsoft.codecoverage.16.2.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.3.0": {
       "type": "package",
@@ -1669,40 +1639,26 @@
       "path": "microsoft.dotnet.internalabstractions/1.0.0",
       "hashPath": "microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512"
     },
-    "Microsoft.DotNet.PlatformAbstractions/1.0.3": {
+    "Microsoft.NET.Test.Sdk/16.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rF92Gp5L2asYrFNf0cKNBxzzGLh1krHuj6TRDk9wdjN2qdvJLaNYOn1s9oYkMlptYX436KiEFqxhLB+I5veXvQ==",
-      "path": "microsoft.dotnet.platformabstractions/1.0.3",
-      "hashPath": "microsoft.dotnet.platformabstractions.1.0.3.nupkg.sha512"
+      "sha512": "sha512-56w1drIQqpMgg3IxHcfra/jXOngiD4pbl0j6TNeJMlOQGlZ8wCMlyRTvn6Crd/FgGjwKbWLurdOHNGrfzLtl6A==",
+      "path": "microsoft.net.test.sdk/16.2.0",
+      "hashPath": "microsoft.net.test.sdk.16.2.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.DependencyModel/1.0.3": {
+    "Microsoft.TestPlatform.ObjectModel/16.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Z3o19EnheuegmvgpCzwoSlnCWxYA6qIUhvKJ7ifKHHvU7U+oYR/gliLiL3LVYOOeGMEEzkpJ5W67sOcXizGtlw==",
-      "path": "microsoft.extensions.dependencymodel/1.0.3",
-      "hashPath": "microsoft.extensions.dependencymodel.1.0.3.nupkg.sha512"
+      "sha512": "sha512-RAyBf87uZ5XjRE953LlxqILpD1SqwQM6bXwxPUCAPPEy0uv12R+eKnFL7yaeLVHInMKkNNh1iD/cDOVDfSgllA==",
+      "path": "microsoft.testplatform.objectmodel/16.2.0",
+      "hashPath": "microsoft.testplatform.objectmodel.16.2.0.nupkg.sha512"
     },
-    "Microsoft.NET.Test.Sdk/15.8.0": {
+    "Microsoft.TestPlatform.TestHost/16.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-u7DjH/b1je0sGyYVH+MDMzwVTBRod34mDhkHFAZfVWkRleH9WZLP9FE+1QAU2FBIF5pIJzzRxAs1yDVrof+WGw==",
-      "path": "microsoft.net.test.sdk/15.8.0",
-      "hashPath": "microsoft.net.test.sdk.15.8.0.nupkg.sha512"
-    },
-    "Microsoft.TestPlatform.ObjectModel/15.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-u6qrZi8pXZrPl+vAJBn/yIaPEsl/NglcLD9FD/fh1OmBaFMcp/dp/5daTB7Fo89iDgktZa6PoACq86tZs0DYXA==",
-      "path": "microsoft.testplatform.objectmodel/15.8.0",
-      "hashPath": "microsoft.testplatform.objectmodel.15.8.0.nupkg.sha512"
-    },
-    "Microsoft.TestPlatform.TestHost/15.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-YCbFo2qKhbRn/6h3+pfA8bDJtxg0BpwwBqVMM+KRJTq1zqH9zOTeQuSaNe0DDaxzc0mmD9a4Wn4qG1yuNHDMBA==",
-      "path": "microsoft.testplatform.testhost/15.8.0",
-      "hashPath": "microsoft.testplatform.testhost.15.8.0.nupkg.sha512"
+      "sha512": "sha512-PogSQ40KgkZjEBdC6KBGpMtuvFFCIdoJAMmK7CAHWyTXCfN1cPN8j0TFJKh+LneSg+y0QQDP23STMF609KhHQw==",
+      "path": "microsoft.testplatform.testhost/16.2.0",
+      "hashPath": "microsoft.testplatform.testhost.16.2.0.nupkg.sha512"
     },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
@@ -1753,19 +1709,19 @@
       "path": "newtonsoft.json/10.0.2",
       "hashPath": "newtonsoft.json.10.0.2.nupkg.sha512"
     },
-    "NUnit/3.10.1": {
+    "NUnit/3.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-E3ii6+VLdeIxTQ5gPjk/7g/xl+aCifbfcIkiGayZCuos+22FEdtKGrxMe6SzoXCQCcL7gdqhfNIFTaZ1+dS18g==",
-      "path": "nunit/3.10.1",
-      "hashPath": "nunit.3.10.1.nupkg.sha512"
+      "sha512": "sha512-3oJTrcUcT9wmweBUwgUf0f1XIYy6RZq2ziV+RM95HMKAJGsHPN2i3MKK1dAPvDPMRLz799Llj4eyu/STB9Q7OA==",
+      "path": "nunit/3.12.0",
+      "hashPath": "nunit.3.12.0.nupkg.sha512"
     },
-    "NUnit3TestAdapter/3.10.0": {
+    "NUnit3TestAdapter/3.14.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hC4QeR/iC8yJcI9eyAfAFWBaDP7lh4CnXqIMLq26CLLGQsLqy44uJwBVmo/0o9aTKVwPm/M1lPYqYcfOJMDqyg==",
-      "path": "nunit3testadapter/3.10.0",
-      "hashPath": "nunit3testadapter.3.10.0.nupkg.sha512"
+      "sha512": "sha512-rtwdIVQOvEcDd+EYNG7dStlQEXfevzLBonLYD3mGMuBubBXx+fLYeAkhocKmTxPtZVnLUjuCOPoP3pUHBMUw8A==",
+      "path": "nunit3testadapter/3.14.0",
+      "hashPath": "nunit3testadapter.3.14.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
       "type": "package",
@@ -1805,7 +1761,7 @@
     "runtime.native.System.Net.Security/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-M2nN92ePS8BgQ2oi6Jj3PlTUzadYSIWLdZrHY1n1ZcW9o4wAQQ6W+aQ2lfq1ysZQfVCgDwY58alUdowrzezztg==",
+      "sha512": "sha512-ARfgeRYF2AnYIcqEvy9VE0agN/3zexMMPtcegq1THpOMS63rIGMi706vCo6pbv9Xzw4qhdX1Gu1zyLZHj2WtLA==",
       "path": "runtime.native.system.net.security/4.3.0",
       "hashPath": "runtime.native.system.net.security.4.3.0.nupkg.sha512"
     },
@@ -1945,14 +1901,14 @@
     "System.ComponentModel.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "sha512": "sha512-KMVuoQ+8bMQ/Z59M3s64num5AD74X5YSqVc7ibwGkPTfmmkl2W8VuSxLRJtpw4KzQrSKUgR0BLbF0adPfcTSGQ==",
       "path": "system.componentmodel.primitives/4.3.0",
       "hashPath": "system.componentmodel.primitives.4.3.0.nupkg.sha512"
     },
     "System.ComponentModel.TypeConverter/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "sha512": "sha512-HZiP0DwTHJ+C+rdFqP47nBYUh5283kcwXIGY2zOVVhsJmVI/2tYiX2zNRdjRQRHsTox58Ydkec6h0pWSh8wAsw==",
       "path": "system.componentmodel.typeconverter/4.3.0",
       "hashPath": "system.componentmodel.typeconverter.4.3.0.nupkg.sha512"
     },
@@ -2267,7 +2223,7 @@
     "System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-h4CEgOgv5PKVF/HwaHzJRiVboL2THYCou97zpmhjghx5frc7fIvlkY1jL+lnIQyChrJDMNEXS6r7byGif8Cy4w==",
+      "sha512": "sha512-vOYy7Jv9KsG3ld2hLt0GoERd82SZi4BelrbXLwI9yFBYX7kpbvUCWYo4eyevk47cuJXZ9ZLVAryANcc7iY71aA==",
       "path": "system.security.cryptography.openssl/4.3.0",
       "hashPath": "system.security.cryptography.openssl.4.3.0.nupkg.sha512"
     },
