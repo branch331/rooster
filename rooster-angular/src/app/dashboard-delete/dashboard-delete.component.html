@@ -1,5 +1,8 @@
 <p *ngIf="dashboardItem">
-  Delete!
+  Delete?
   {{ dashboardItem.id }}
   {{ dashboardItem.dashboardItemName }}
 </p>
+
+<button class="btn btn-danger" (click)="onDelete()">Delete!</button>
+<button class="btn btn-primary" (click)="onCancel()">Cancel</button>

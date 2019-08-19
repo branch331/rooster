@@ -10,35 +10,37 @@
   </p>
 
   <div [ngSwitch]="dashboardItem.dashboardItemType">
-      <div *ngSwitchCase="'Weather'">
+    <div *ngSwitchCase="'Weather'">
 
-        {{ weatherItem.weatherItemName }} ({{ weatherItem.weatherItemLatitude }}, {{ weatherItem.weatherItemLongitude }})
+      {{ weatherItem.weatherItemName }} ({{ weatherItem.weatherItemLatitude }}, {{ weatherItem.weatherItemLongitude }})
 
-      </div>
-      <div *ngSwitchCase="'Commute'">
+    </div>
+    <div *ngSwitchCase="'Commute'">
 
-        {{ commuteItem.commuteItemName }}
+      {{ commuteItem.commuteItemName }}
 
+      <p>
+          Origin: {{ commuteItem.commuteOriginName }} ({{ commuteItem.commuteOriginLatitude }}, {{ commuteItem.commuteOriginLongitude }})
+      </p>
+
+      <p>
+        Destination: {{ commuteItem.commuteDestinationName }} ({{ commuteItem.commuteOriginLatitude }}, {{ commuteItem.commuteOriginLongitude }})
+      </p>
+    </div>
+
+    <div *ngSwitchCase="'Calendar'">
         <p>
-            Origin: {{ commuteItem.commuteOriginName }} ({{ commuteItem.commuteOriginLatitude }}, {{ commuteItem.commuteOriginLongitude }})
+          {{ calendarItem.calendarItemName }}
         </p>
-
         <p>
-          Destination: {{ commuteItem.commuteDestinationName }} ({{ commuteItem.commuteOriginLatitude }}, {{ commuteItem.commuteOriginLongitude }})
+          {{ calendarItem.calendarItemTimeRange }}
         </p>
-      </div>
+    </div>
 
-      <div *ngSwitchCase="'Calendar'">
-          <p>
-            {{ calendarItem.calendarItemName }}
-          </p>
-          <p>
-            {{ calendarItem.calendarItemTimeRange }}
-          </p>
-      </div>
-
-      <div *ngSwitchDefault>
-        <!--Empty default case-->
-      </div>
+    <div *ngSwitchDefault>
+      <!--Empty default case-->
     </div>
   </div>
+</div>
+
+<button class="btn btn-primary" (click)="onBackButton()">Back</button>

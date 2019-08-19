@@ -9,6 +9,7 @@ import { DashboardService } from '../dashboard.service'
 import { WeatherService } from '../weather.service'
 import { CommuteService } from '../commute.service'
 import { CalendarService } from '../calendar.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -23,7 +24,8 @@ export class CreateComponent {
 
   dashboardItemTypes = ['Weather', 'Commute', 'Calendar'];
 
-  constructor(private dashboardService: DashboardService,
+  constructor(private router: Router,
+              private dashboardService: DashboardService,
               private weatherService: WeatherService,
               private commuteService: CommuteService,
               private calendarService: CalendarService) { }
@@ -57,6 +59,13 @@ export class CreateComponent {
 
   createDashboardItem(): void {
     this.dashboardService.addDashboardItem(this.dashboardItem)
-      .subscribe(response => alert("Added dashboard item"));
+      .subscribe(response => {
+        console.log("Added dashboard item");
+        this.router.navigate(['/dashboard']);
+      });
+  }
+
+  onCancel() {
+    this.router.navigate(['/dashboard']);
   }
 }

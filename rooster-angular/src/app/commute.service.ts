@@ -51,8 +51,8 @@ export class CommuteService {
       );
   }
 
-  deleteCommuteItem(commuteItem: CommuteItem | number): Observable<CommuteItem> {
-    const id = typeof commuteItem === 'number' ? commuteItem: commuteItem.id;
+  deleteCommuteItem(commuteItem: CommuteItem | string): Observable<CommuteItem> {
+    const id = typeof commuteItem === 'string' ? commuteItem: commuteItem.id;
 
     return this.http.delete<CommuteItem>(this.roosterApiCommuteUrl + '/' + id, this.httpOptions)
       .pipe(

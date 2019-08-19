@@ -46,8 +46,8 @@ export class DashboardService {
       );
   }
 
-  deleteDashboardItem(dashboardItem: DashboardItem | number): Observable<DashboardItem> {
-    const id = typeof dashboardItem === 'number' ? dashboardItem: dashboardItem.id;
+  deleteDashboardItem(dashboardItem: DashboardItem | string): Observable<DashboardItem> {
+    const id = typeof dashboardItem === 'string' ? dashboardItem: dashboardItem.id;
 
     return this.http.delete<DashboardItem>(this.roosterApiDashboardUrl + '/' + id, this.httpOptions)
       .pipe(

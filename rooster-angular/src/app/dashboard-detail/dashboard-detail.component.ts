@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DashboardItem } from '../dashboardItem';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DashboardService } from '../dashboard.service';
 import { WeatherItem } from '../weatherItem';
@@ -23,6 +23,7 @@ export class DashboardDetailComponent implements OnInit {
   @Input() dashboardItem: DashboardItem;
   
   constructor(private route: ActivatedRoute, 
+    private router: Router,
     private dashboardService: DashboardService,
     private weatherService: WeatherService,
     private commuteService: CommuteService,
@@ -60,5 +61,9 @@ export class DashboardDetailComponent implements OnInit {
           this.calendarItem = returnedCalendarItem;
         });
     }
+  }
+
+  onBackButton() {
+    this.router.navigate(['/dashboard']);
   }
 }

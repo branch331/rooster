@@ -46,8 +46,8 @@ export class CalendarService {
       );
   }
 
-  deleteCalendarItem(calendarItem: CalendarItem | number): Observable<CalendarItem> {
-    const id = typeof calendarItem === 'number' ? calendarItem: calendarItem.id;
+  deleteCalendarItem(calendarItem: CalendarItem | string): Observable<CalendarItem> {
+    const id = typeof calendarItem === 'string' ? calendarItem: calendarItem.id;
 
     return this.http.delete<CalendarItem>(this.roosterApiCalendarUrl + '/' + id, this.httpOptions)
       .pipe(

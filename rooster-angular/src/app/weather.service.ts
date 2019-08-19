@@ -49,8 +49,8 @@ export class WeatherService {
       );
   }
 
-  deleteWeatherItem(weatherItem: WeatherItem | number): Observable<WeatherItem> {
-    const id = typeof weatherItem === 'number' ? weatherItem: weatherItem.id;
+  deleteWeatherItem(weatherItem: WeatherItem | string): Observable<WeatherItem> {
+    const id = typeof weatherItem === 'string' ? weatherItem: weatherItem.id;
 
     return this.http.delete<WeatherItem>(this.roosterApiWeatherUrl + '/' + id, this.httpOptions)
       .pipe(

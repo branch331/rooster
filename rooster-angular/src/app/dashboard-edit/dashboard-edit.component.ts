@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DashboardItem } from '../dashboardItem';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DashboardService } from '../dashboard.service';
 import { WeatherItem } from '../weatherItem';
@@ -26,6 +26,7 @@ export class DashboardEditComponent implements OnInit {
   dashboardItemTypes = ['Weather', 'Commute', 'Calendar'];
   
   constructor(private route: ActivatedRoute, 
+    private router: Router,
     private dashboardService: DashboardService,    
     private weatherService: WeatherService,
     private commuteService: CommuteService,
@@ -68,21 +69,28 @@ export class DashboardEditComponent implements OnInit {
   onSubmit() {
     if (this.dashboardItem.dashboardItemType == "Weather") {
       this.weatherService.updateWeatherItem(this.weatherItem)
-        .subscribe(response => alert("Updated weather item"));
+        .subscribe(response => console.log("Updated weather item"));
     }
     else if (this.dashboardItem.dashboardItemType == "Commute") {
       this.commuteService.updateCommuteItem(this.commuteItem)
-        .subscribe(response => alert("Updated commute item"));
+        .subscribe(response => console.log("Updated commute item"));
     }
     else if (this.dashboardItem.dashboardItemType == "Calendar") {
       this.calendarService.updateCalendarItem(this.calendarItem)
-        .subscribe(response => alert("Updated calendar item"));
+        .subscribe(response => console.log("Updated calendar item"));
     }
     this.updateDashboardItem();
   }
 
   updateDashboardItem(): void {
     this.dashboardService.updateDashboardItem(this.dashboardItem)
-      .subscribe(response => alert("Updated dashboard item"));
+      .subscribe(response => {
+        console.log("Updated dashboard item");
+        this.router.navigate(['/dashboard']);
+      });
+  }
+
+  onCancel() {
+    this.router.navigate(['/dashboard']);
   }
 }
