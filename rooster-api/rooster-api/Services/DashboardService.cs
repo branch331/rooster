@@ -5,6 +5,7 @@ namespace roosterapi.Services
 {
     public class DashboardService : DatabaseServiceBase<DashboardItem>
     {
+        public DashboardService() { } //Parameterless constructor to Mock in Unit Tests
         public DashboardService(IDashboardDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
