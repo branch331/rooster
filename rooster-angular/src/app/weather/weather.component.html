@@ -1,22 +1,48 @@
 <div *ngIf="weatherItem && weatherData">
   <p id="weatherSummary">{{ weatherData.hourly.summary }}</p>
-  <p class="weatherHeaderText">{{ weatherData.currently.icon }}</p>
-  <p class="weatherHeaderText">{{ weatherData.currently.summary }}</p>
-  
+
+  <div id="summaryIcon" [ngSwitch]="weatherData.currently.icon">
+    <img class="mainWeatherIcon" *ngSwitchCase="'clear-day'" src="assets/images/clear-day.png" alt="clear day"/>
+    <img class="mainWeatherIcon" *ngSwitchCase="'clear-night'" src="assets/images/clear-night.png" alt="clear night"/>
+    <img class="mainWeatherIcon" *ngSwitchCase="'rain'" src="assets/images/rain.png" alt="rain"/>
+    <img class="mainWeatherIcon" *ngSwitchCase="'snow'" src="assets/images/snow.png" alt="snow"/>
+    <img class="mainWeatherIcon" *ngSwitchCase="'sleet'" src="assets/images/sleet.png" alt="sleet"/>
+    <img class="mainWeatherIcon" *ngSwitchCase="'wind'" src="assets/images/wind.png" alt="wind"/>
+    <img class="mainWeatherIcon" *ngSwitchCase="'fog'" src="assets/images/fog.png" alt="fog"/>
+    <img class="mainWeatherIcon" *ngSwitchCase="'cloudy'" src="assets/images/cloudy.png" alt="cloudy"/>
+    <img class="mainWeatherIcon" *ngSwitchCase="'partly-cloudy-day'" src="assets/images/partly-cloudy-day.png" alt="partly-cloudy-day"/>
+    <img class="mainWeatherIcon" *ngSwitchCase="'partly-cloudy-night'" src="assets/images/partly-cloudy-night.png" alt="partly-cloudy-night"/>
+  </div>
+
+  <p id="currentTemperature">{{ weatherData.currently.temperature }}° F</p>
+  <p id="temperatureLow">LOW: {{ weatherData.daily.data[0].temperatureLow }}° F</p>
+  <p id="temperatureHigh">HIGH: {{ weatherData.daily.data[0].temperatureHigh }}° F</p>
+
   <div class="row" id="weatherBody">
     <ng-container *ngFor="let hourlyForecast of weatherData.hourly.data.slice(0, 12); index as i">
-      <div class="col-2" *ngIf="i % 2 == 0">
+      <div class="col-2 weatherCard" *ngIf="i % 2 == 0">
         <!--Img can be clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night-->
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1542304813-922a8025d72a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" alt="hourlyForecast.icon"/>
-        
+
+        <div [ngSwitch]="hourlyForecast.icon">
+          <img class="card-img-top" *ngSwitchCase="'clear-day'" src="assets/images/clear-day.png" alt="clear day"/>
+          <img class="card-img-top" *ngSwitchCase="'clear-night'" src="assets/images/clear-night.png" alt="clear night"/>
+          <img class="card-img-top" *ngSwitchCase="'rain'" src="assets/images/rain.png" alt="rain"/>
+          <img class="card-img-top" *ngSwitchCase="'snow'" src="assets/images/snow.png" alt="snow"/>
+          <img class="card-img-top" *ngSwitchCase="'sleet'" src="assets/images/sleet.png" alt="sleet"/>
+          <img class="card-img-top" *ngSwitchCase="'wind'" src="assets/images/wind.png" alt="wind"/>
+          <img class="card-img-top" *ngSwitchCase="'fog'" src="assets/images/fog.png" alt="fog"/>
+          <img class="card-img-top" *ngSwitchCase="'cloudy'" src="assets/images/cloudy.png" alt="cloudy"/>
+          <img class="card-img-top" *ngSwitchCase="'partly-cloudy-day'" src="assets/images/partly-cloudy-day.png" alt="partly-cloudy-day"/>
+          <img class="card-img-top" *ngSwitchCase="'partly-cloudy-night'" src="assets/images/partly-cloudy-night.png" alt="partly-cloudy-night"/>
+        </div>
+
         <div class="card-body">
-          <p class="weatherBodyText"> {{ hourlyForecast.summary }} </p>
-          <p class="weatherBodyText"> {{ hourlyForecast.time * 1000 | date:'HH:mm'}} </p>
-          <p class="weatherBodyText"> {{ hourlyForecast.temperature }} </p>
+          <p class="weatherBodyText" id="weatherCardTime"> {{ hourlyForecast.time * 1000 | date:'HH:mm'}} </p>
+          <p class="weatherBodyText" id="weatherCardTemperature"> {{ hourlyForecast.temperature }}° F</p>
+          <p class="weatherBodyText" id="weatherCardSummary"> {{ hourlyForecast.summary }} </p>
 
           <div *ngIf="hourlyForecast.precipType"> 
-            <p class="weatherBodyText"> {{ hourlyForecast.precipType }} </p>
-            <p class="weatherBodyText"> {{ hourlyForecast.precipProbability }}% </p>
+            <p class="weatherBodyText" id="precipitationSummary"> {{ hourlyForecast.precipType }}: {{ hourlyForecast.precipProbability }}% </p>
           </div>
         </div>
       </div>

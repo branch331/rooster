@@ -13,3 +13,13 @@
     font-size: 2rem;
     text-align: center;
 }
+
+.buttonGrouping {
+    float: right;
+    margin: 20px 5px 5px 5px;
+}
+
+.buttonColumn {
+    display: inline-block;
+    margin: 0 3px;
+}

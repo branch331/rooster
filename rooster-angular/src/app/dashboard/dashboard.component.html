@@ -19,14 +19,24 @@
         <app-calendar [calendarItemId]="dashboardItem.dashboardItemReferenceId"></app-calendar>
     </div>
 
-    <nav>
-      <a routerLink="{{ dashboardItem.id }}"><button>Details</button></a>
-    </nav>
-    <nav>
-        <a routerLink="edit/{{ dashboardItem.id }}"><button>Edit</button></a>
-    </nav>
-    <nav>
-      <a routerLink="delete/{{ dashboardItem.id }}"><button>Delete</button></a>
-    </nav>
+    <div class="buttonGrouping">
+      <div class="buttonColumn">
+        <nav>
+          <a routerLink="{{ dashboardItem.id }}"><button>Details</button></a>
+        </nav>
+      </div>
+
+      <div class="buttonColumn">
+        <nav>
+            <a routerLink="edit/{{ dashboardItem.id }}"><button>Edit</button></a>
+        </nav>
+      </div>
+
+      <div class="buttonColumn">
+        <nav>
+          <a routerLink="delete/{{ dashboardItem.id }}"><button>Delete</button></a>
+        </nav>
+      </div>
+    </div>
   </div>
 </div>
