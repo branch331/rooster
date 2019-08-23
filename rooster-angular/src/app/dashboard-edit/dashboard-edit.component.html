@@ -1,6 +1,4 @@
-<div *ngIf="dashboardItem">
-  Edit!
-
+<div id="editDiv" *ngIf="dashboardItem">
   <form (ngSubmit)="onSubmit()" #dashboardForm="ngForm">
     <div class="form-group">
       <label for="dashboardItemName">Name</label>
@@ -146,10 +144,11 @@
           <!--Empty default case-->
         </div>
       </div>
-      <button type="submit" class="btn btn-success">Submit!</button>
-      <button class="btn btn-primary" (click)="onCancel()">Cancel</button>
     </div>
-
+    <div id="buttonGrouping">
+      <button type="submit" class="btn">Submit!</button>
+      <button class="btn" (click)="onCancel()">Cancel</button>
+    </div>
   </form>
 
 </div>

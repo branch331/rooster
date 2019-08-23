@@ -1,0 +1,21 @@
+#detailDiv {
+    text-align: center;
+    border: 2px solid black;
+    width: 40rem;
+    height: auto;
+    margin: 20px auto;
+}
+
+.backButton {
+    float: right;
+    border: 2px solid black;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+p, div {
+    font-size: 30px;
+    margin-top: 10px;
+}

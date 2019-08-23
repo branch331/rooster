@@ -1,12 +1,9 @@
-<div *ngIf="dashboardItem">
+<div id="detailDiv" *ngIf="dashboardItem">
   <h2>
-    Detail!
+    {{ dashboardItem.dashboardItemName }} Details
   </h2>
   <p>
-    {{ dashboardItem.dashboardItemName }}
-  </p>
-  <p>
-    {{ dashboardItem.dashboardItemType }}
+    Dashboard Item Type: {{ dashboardItem.dashboardItemType }}
   </p>
 
   <div [ngSwitch]="dashboardItem.dashboardItemType">
@@ -17,7 +14,7 @@
     </div>
     <div *ngSwitchCase="'Commute'">
 
-      {{ commuteItem.commuteItemName }}
+      Commute Item Name: {{ commuteItem.commuteItemName }}
 
       <p>
           Origin: {{ commuteItem.commuteOriginName }} ({{ commuteItem.commuteOriginLatitude }}, {{ commuteItem.commuteOriginLongitude }})
@@ -30,10 +27,10 @@
 
     <div *ngSwitchCase="'Calendar'">
         <p>
-          {{ calendarItem.calendarItemName }}
+          Calendar Item Name: {{ calendarItem.calendarItemName }}
         </p>
         <p>
-          {{ calendarItem.calendarItemTimeRange }}
+          # of Days to Get Calendar Events From: {{ calendarItem.calendarItemTimeRange }}
         </p>
     </div>
 
@@ -41,6 +38,6 @@
       <!--Empty default case-->
     </div>
   </div>
+  <button class="btn backButton" (click)="onBackButton()">Back</button>
 </div>
 
-<button class="btn btn-primary" (click)="onBackButton()">Back</button>
