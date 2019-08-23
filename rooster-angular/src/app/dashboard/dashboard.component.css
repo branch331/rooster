@@ -23,3 +23,18 @@
     display: inline-block;
     margin: 0 3px;
 }
+
+.dashboardButton {
+    border: 1px solid black; 
+}
+
+.buttonImage {
+    height: 30px;
+    width: 30px;
+}
+
+#createButton {
+    float: right;
+    margin: 0 4rem 10px;
+    border: 2px solid black;
+}

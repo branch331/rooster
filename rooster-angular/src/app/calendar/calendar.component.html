@@ -1,16 +1,14 @@
 <div *ngIf="calendarItem">
-    {{ calendarItem.calendarItemName }}
-    {{ calendarItem.calendarItemTimeRange }}
     <ul>
-      <li *ngFor="let event of calendarItem.calendarItemEventList">
-        <p>
+      <li *ngFor="let event of calendarItem.calendarItemEventList" class="calendarListItem">
+        <p class="eventSummaryText">
             {{ event.summary }}
         </p>
-        <p>
+        <p class="eventLocationText">
             {{ event.location }}
         </p>
-        <p>
-            {{ event.startDateTime }} - {{ event.endDateTime }}
+        <p class="eventTimeRangeText">
+            {{event.startDateTime | date: 'M/dd'}}: <span id="eventTimeRange">{{ event.startDateTime | date:'H:mm'}} - {{ event.endDateTime | date:'H:mm'}}</span>
         </p>
       </li>
     </ul>

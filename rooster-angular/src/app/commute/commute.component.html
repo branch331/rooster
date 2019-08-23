@@ -1,14 +1,10 @@
 <div class="commuteContainer" *ngIf = "commuteItem && commuteData && commuteImagePath">
-  <div class="row">
-    <div class="commuteInfo col-4">
-        <h4 class="commuteHeader">{{ commuteItem.commuteOriginName }} to {{ commuteItem.commuteDestinationName }}</h4>
-        <p class="commuteText">Distance: {{ commuteData.resourceSets[0].resources[0].results[0].travelDistance }} km</p>
-        <p class="commuteText">Duration: {{ commuteData.resourceSets[0].resources[0].results[0].travelDuration }} minutes</p>
-    </div>
 
-    <div class="commuteRoute col-5">
-        <img class="commuteImage" [src]="commuteImagePath"/>
-    </div>
-  </div>
+  <h4 class="commuteHeader">{{ commuteItem.commuteOriginName }} to {{ commuteItem.commuteDestinationName }}</h4>
+  <img class="commuteImage" [src]="commuteImagePath"/>
+
+  <p class="commuteText">{{ commuteData.resourceSets[0].resources[0].results[0].travelDuration }} minutes</p>
+  <p class="commuteText">{{ commuteData.resourceSets[0].resources[0].results[0].travelDistance }} km</p>
+
 </div>
 

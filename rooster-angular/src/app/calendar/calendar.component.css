@@ -1,0 +1,29 @@
+ul {
+    margin: 15px 5px;
+    padding: 0;
+    list-style: none;
+}
+
+.calendarListItem {
+    text-align: center;
+    border: 2px solid black;
+}
+
+.eventSummaryText {
+    font-size: 22px;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.eventLocationText {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.eventTimeRangeText {
+    font-size: 18px;
+}
+
+#eventTimeRange {
+    font-weight: 500;
+}

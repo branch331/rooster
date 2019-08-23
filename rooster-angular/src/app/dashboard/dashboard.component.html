@@ -1,7 +1,3 @@
-<nav>
-    <a routerLink="new"><button class="btn btn-primary">Create!</button></a>
-</nav>
-
 <div id="dashboard" class="row justify-content-center">
   <div class="dashboardItem col-11" *ngFor="let dashboardItem of dashboardItems">
     <div class="dashboardItemContents" *ngIf="dashboardItem.dashboardItemType == 'Weather'">
@@ -22,21 +18,25 @@
     <div class="buttonGrouping">
       <div class="buttonColumn">
         <nav>
-          <a routerLink="{{ dashboardItem.id }}"><button>Details</button></a>
+          <a routerLink="{{ dashboardItem.id }}"><button class="btn dashboardButton"><img class="buttonImage" src="assets/images/details.png"></button></a>
         </nav>
       </div>
 
       <div class="buttonColumn">
         <nav>
-            <a routerLink="edit/{{ dashboardItem.id }}"><button>Edit</button></a>
+            <a routerLink="edit/{{ dashboardItem.id }}"><button class="btn dashboardButton"><img class="buttonImage" src="assets/images/edit.png"></button></a>
         </nav>
       </div>
 
       <div class="buttonColumn">
         <nav>
-          <a routerLink="delete/{{ dashboardItem.id }}"><button>Delete</button></a>
+          <a routerLink="delete/{{ dashboardItem.id }}"><button class="btn dashboardButton"><img class="buttonImage" src="assets/images/delete.png"></button></a>
         </nav>
       </div>
     </div>
   </div>
 </div>
+
+<nav>
+    <a routerLink="new"><button class="btn" id="createButton">New Item!</button></a>
+</nav>
