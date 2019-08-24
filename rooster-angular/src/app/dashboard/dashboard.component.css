@@ -34,6 +34,8 @@
 }
 
 #createButton {
+    color: white;
+    background: rgb(115, 169, 193);
     float: right;
     margin: 0 4rem 10px;
     border: 2px solid black;

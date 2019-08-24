@@ -7,6 +7,8 @@
 }
 
 .backButton {
+    color: white;
+    background: rgb(78, 144, 201);
     float: right;
     border: 2px solid black;
 }

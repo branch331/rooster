@@ -3,6 +3,8 @@
     border: 2px solid black;
     border-radius: 10px;
     width: 60rem;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #buttonGrouping {
@@ -11,4 +13,14 @@
 
 button {
     border: 2px solid black;
+}
+
+#submitButton {
+    color: white;
+    background: rgb(95, 198, 103);
+}
+
+#cancelButton {
+    color: white;
+    background: rgb(78, 144, 201);
 }

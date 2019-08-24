@@ -1,0 +1,28 @@
+p {
+    font-size: 30px;
+}
+
+.buttonGrouping {
+    float: right;
+}
+
+button {
+    border: 2px solid black;
+}
+
+#deleteButton {
+    color: white;
+    background: rgb(222, 78, 78);
+}
+
+#cancelButton {
+    color: white;
+    background: rgb(78, 144, 201);
+}
+
+#deleteDiv {
+    width: 60rem;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid black;
+}

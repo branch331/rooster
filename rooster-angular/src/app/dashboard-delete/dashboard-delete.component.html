@@ -1,8 +1,14 @@
-<p *ngIf="dashboardItem">
-  Delete?
-  {{ dashboardItem.id }}
-  {{ dashboardItem.dashboardItemName }}
-</p>
+<div id="deleteDiv" *ngIf="dashboardItem">
+  <p>
+    Delete Item: {{ dashboardItem.dashboardItemName }}?
+  </p>
+  <p>
+    Dashboard Item Type: {{ dashboardItem.dashboardItemType }}
+  </p>
 
-<button class="btn btn-danger" (click)="onDelete()">Delete!</button>
-<button class="btn btn-primary" (click)="onCancel()">Cancel</button>
+  <div class="buttonGrouping">
+    <button class="btn" id="deleteButton" (click)="onDelete()">Delete</button>
+    <button class="btn" id="cancelButton" (click)="onCancel()">Cancel</button>
+  </div>
+</div>
+

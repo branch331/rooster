@@ -52,9 +52,8 @@
           required
           [(ngModel)]="weatherItem.weatherItemLongitude"
           name="weatherItemLongitude">
-
-        </div>
-        <div *ngSwitchCase="'Commute'">
+          </div>
+          <div *ngSwitchCase="'Commute'">
 
           <label for="commuteItemName">Commute Item Name</label>
           <input type="text"
@@ -146,8 +145,8 @@
       </div>
     </div>
     <div id="buttonGrouping">
-      <button type="submit" class="btn">Submit!</button>
-      <button class="btn" (click)="onCancel()">Cancel</button>
+      <button type="submit" id="submitButton" class="btn">Submit</button>
+      <button class="btn" id="cancelButton" (click)="onCancel()">Cancel</button>
     </div>
   </form>
 
