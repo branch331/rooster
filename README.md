@@ -52,8 +52,10 @@ The Angular frontend straightforward features to view, add, edit, and delete var
 
 The backend consists of a controller for each aforementioned model, including a 'CalendarController', 'CommuteController', 'DashboardController', and 'WeatherController'.
 
-<img align="center" src="readme-material/diagram/Slide1.jpeg">
+<p align="center">
+	<img src="readme-material/diagram/Slide1.jpeg">
 
-<img align="center" src="readme-material/diagram/Slide2.jpeg">
+	<img src="readme-material/diagram/Slide2.jpeg">
+</p>
 
 
