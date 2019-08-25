@@ -54,7 +54,9 @@ The backend consists of a controller for each aforementioned model, including a 
 
 <p align="center">
 	<img src="readme-material/diagram/Slide1.jpeg">
+</p>
 
+<p align="center">
 	<img src="readme-material/diagram/Slide2.jpeg">
 </p>
 
