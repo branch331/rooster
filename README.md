@@ -24,31 +24,36 @@ Uses the Bing Distance API and 'OriginLatitude', 'OriginLongitude', 'Destination
 
 Uses the Google Calendar API to find calendar events for a given time range, 'EventTimeRange'. Populates the 'EventList' property with these events, which is a list comprised of the 'RoosterEvent' class which captures the calendar event summary, location, and start/end times.
 
-### Backend 
-
-The backend consists of a controller for each aforementioned model, including a 'CalendarController', 'CommuteController', 'DashboardController', and 'WeatherController'.
-
-!['Backend diagram'](readme-material/Backend.png)
 
 ### Frontend 
 
 The Angular frontend straightforward features to view, add, edit, and delete various 'dashboard items'.
 
-!['main gif'](readme-material/Main.gif)
+!['Main gif'](readme-material/Main.gif)
 
 #### Detail
 
-!['main gif'](readme-material/Detail.gif)
+!['Detail gif'](readme-material/Detail.gif)
 
 #### Edit
 
-!['main gif'](readme-material/Edit.gif)
+!['Edit gif'](readme-material/Edit.gif)
 
 #### Create
 
-!['main gif'](readme-material/Create.gif)
+!['New gif'](readme-material/New.gif)
 
 #### Delete
 
-!['main gif'](readme-material/Delete.gif)
+!['Delete gif'](readme-material/Delete.gif)
+
+
+### Backend 
+
+The backend consists of a controller for each aforementioned model, including a 'CalendarController', 'CommuteController', 'DashboardController', and 'WeatherController'.
+
+!['Backend diagram I'](readme-material/diagram/Slide1.jpeg)
+
+!['Backend diagram II'](readme-material/diagram/Slide2.jpeg)
+
 
