@@ -2,7 +2,7 @@
 
 A daily dashboard SPA that can be configured to show weather, commute time, and Google Calendar information.
 
-Built with an ASP .NET Core (2.2.301) + MongoDB (4.0.10) Backend, and Angular 8 Frontend
+Built with an ASP .NET Core (2.2.301) + MongoDB (4.0.10) Backend, and Angular 8 Frontend.
 
 ### Models
 
@@ -52,8 +52,8 @@ The Angular frontend straightforward features to view, add, edit, and delete var
 
 The backend consists of a controller for each aforementioned model, including a 'CalendarController', 'CommuteController', 'DashboardController', and 'WeatherController'.
 
-!['Backend diagram I'](readme-material/diagram/Slide1.jpeg)
+<img align="center" src="readme-material/diagram/Slide1.jpeg">
 
-!['Backend diagram II'](readme-material/diagram/Slide2.jpeg)
+<img align="center" src="readme-material/diagram/Slide2.jpeg">
 
 
